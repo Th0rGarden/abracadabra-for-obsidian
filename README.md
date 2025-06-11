@@ -30,7 +30,7 @@ Creating and maintaining free plugins is time consuming. If you can afford it, p
 </p>  
 
 > **📖 Looking for the full guide?**  
-> This README is a brief overview. For a complete, searchable guide with real-world use cases and deep-dives into every feature, **[visit the official documentation site](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F)**.
+> This README is a brief overview. For a complete, searchable guide with real-world use cases and deep-dives into every feature, **[visit the official documentation site](https://th0rgarden.github.io/abracadabra-for-obsidian/)**.
 
 ---
 
@@ -40,28 +40,28 @@ Abracadabra is a **management console** that fundamentally redefines your relati
 
 **😵‍💫 The Problem:** The potential of many plugins is latent, locked away behind fragmented interfaces. Documentation lives on GitHub, commands in the palette, hotkeys buried in settings. This forces constant context switching and leads to "feature blindness"—where you only use a fraction of a plugin's true power.
 
-**🪄 The Solution:** Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic command deck for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23core-concepts) in our documentation.
+**🪄 The Solution:** Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic command deck for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://th0rgarden.github.io/abracadabra-for-obsidian/#core-concepts) in our documentation.
 
 ## Key Features: Your Modular Command Deck
 
 Each component of the Command Deck is a powerful tool on its own. For a complete breakdown of every feature and setting, check out the full documentation.
 
-- **🃏 Info Card**: Your mission control. Features an advanced version manager, one-click changelogs, and an intelligent action bar with auto-detected Donate, Docs, and Wiki links, plus a configurable Dev menu. ([See Docs for Details →](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23ref-info-card))
+- **🃏 Info Card**: Your mission control. Features an advanced version manager, one-click changelogs, and an intelligent action bar with auto-detected Donate, Docs, and Wiki links, plus a configurable Dev menu. ([See Docs for Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-info-card))
     
-- **📖 Readme Viewer**: In-app documentation with intelligent fetching, enhanced rendering for media, full-text search, and font controls. ([Details →](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23ref-readme-viewer))
+- **📖 Readme Viewer**: In-app documentation with intelligent fetching, enhanced rendering for media, full-text search, and font controls. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-readme-viewer))
     
-- **🎛️ Command Module**: Build a visual grid of buttons for any command in Obsidian. Customize names, icons (1000+), and colors. Includes one-click "Pre-populate" and "Clear" actions. ([Details →](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23ref-command-module))
+- **🎛️ Command Module**: Build a visual grid of buttons for any command in Obsidian. Customize names, icons (1000+), and colors. Includes one-click "Pre-populate" and "Clear" actions. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-command-module))
     
-- **⌨️ Commands & Hotkeys List**: A complete registry of a plugin's commands. Run them directly, jump to hotkey settings, and discover integrations by showing commands from other plugins. ([Details →](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23ref-commands-list))
+- **⌨️ Commands & Hotkeys List**: A complete registry of a plugin's commands. Run them directly, jump to hotkey settings, and discover integrations by showing commands from other plugins. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-commands-list))
     
-- **📝 Plugin Notes**: A personal scratchpad for each plugin, saved as standard Markdown files in your vault. Features auto-saving and resizable height that can be remembered per-plugin. ([Details →](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23ref-plugin-notes))
+- **📝 Plugin Notes**: A personal scratchpad for each plugin, saved as standard Markdown files in your vault. Features auto-saving and resizable height that can be remembered per-plugin. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-plugin-notes))
     
-- **🖥️ Console Logger**: A live, in-app debugging tool. Captures and filters console messages by source plugin, with one-click copy for easy bug reporting. ([Details →](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23ref-console-logger))
+- **🖥️ Console Logger**: A live, in-app debugging tool. Captures and filters console messages by source plugin, with one-click copy for easy bug reporting. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-console-logger))
     
 
 ## Bonus Upgrades
 
-Abracadabra also enhances your entire Obsidian experience. Discover all the [**Bonus Features & Universal Enhancements**](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23bonus-features) in the full documentation.
+Abracadabra also enhances your entire Obsidian experience. Discover all the [**Bonus Features & Universal Enhancements**](https://th0rgarden.github.io/abracadabra-for-obsidian/#bonus-features) in the full documentation.
 
 - **🔎 Search Any Plugin's Settings:** Injects a search bar into other plugins' native settings pages (can be disabled, like most features, in settings)
     
@@ -83,7 +83,7 @@ My process for tackling a new plugin is always the same now. Whenever I install 
 After I've figured out the key actions I'll be using regularly, I build myself a custom interface with the command module. I'll click 'Edit' and create a grid with buttons for 'Archive Tasks' and 'Task Report', giving them custom icons and colors. It turns a complex plugin into a simple, visual app that's tailored to my specific needs.
 
 > **📖 See More Examples**  
-> This is just one story. Read more about how [**focused writers, new explorers, and plugin developers**](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23use-cases) use Abracadabra in the full documentation.
+> This is just one story. Read more about how [**focused writers, new explorers, and plugin developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#use-cases) use Abracadabra in the full documentation.
 
 ## 📦 Installation
 
@@ -98,13 +98,13 @@ After I've figured out the key actions I'll be using regularly, I build myself a
 4. Enable "Abracadabra" in the **Community plugins** tab in your settings.
     
 
-💡 **Having trouble?** For more detailed instructions or troubleshooting tips, please refer to the [**full Installation guide**](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23installation) in our documentation.
+💡 **Having trouble?** For more detailed instructions or troubleshooting tips, please refer to the [**full Installation guide**](https://th0rgarden.github.io/abracadabra-for-obsidian/#installation) in our documentation.
 
 ---
 
 ## Brief Settings Guide
 
-Find these under **Settings -> Abracadabra**. This is a quick summary; for a complete breakdown of every single option, please consult the exhaustive [**Settings Reference**](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23settings-reference) in the official docs.
+Find these under **Settings -> Abracadabra**. This is a quick summary; for a complete breakdown of every single option, please consult the exhaustive [**Settings Reference**](https://th0rgarden.github.io/abracadabra-for-obsidian/#settings-reference) in the official docs.
 
 - **🎨 Component Layout & Order:** Drag-and-drop to set the global default layout for all components.
     
@@ -134,11 +134,11 @@ Find these under **Settings -> Abracadabra**. This is a quick summary; for a com
 
 ## Frequently Asked Questions (FAQ)
 
-This covers the most common questions. For an even more comprehensive list, including detailed troubleshooting steps, please visit the [**full FAQ page in our documentation**](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23faq).
+This covers the most common questions. For an even more comprehensive list, including detailed troubleshooting steps, please visit the [**full FAQ page in our documentation**](https://th0rgarden.github.io/abracadabra-for-obsidian/#faq).
 
 - **Q: The "Update" button failed. What do I do?**
     
-    - **A:** This is usually a network issue or GitHub rate limit. The best fix is to add a [GitHub Personal Access Token](https://www.google.com/url?sa=E&q=https://github.com/settings/tokens/new?scopes=repo&description=Obsidian%20Plugin%20Abracadabra) in Abracadabra's "Data Management" settings. For other potential causes and solutions, [see the detailed troubleshooting guide in our docs](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23faq).
+    - **A:** This is usually a network issue or GitHub rate limit. The best fix is to add a [GitHub Personal Access Token](https://www.google.com/url?sa=E&q=https://github.com/settings/tokens/new?scopes=repo&description=Obsidian%20Plugin%20Abracadabra) in Abracadabra's "Data Management" settings. For other potential causes and solutions, [see the detailed troubleshooting guide in our docs](https://th0rgarden.github.io/abracadabra-for-obsidian/#faq).
         
 - **Q: The Readme isn't loading.**
     
@@ -146,11 +146,11 @@ This covers the most common questions. For an even more comprehensive list, incl
         
 - **Q: How do I reset the layout for just one plugin?**
     
-    - **A:** Go to that plugin's settings, click the Abracadabra ˅ control menu, and select "Reset Plugin Layout". [Our Customization Guide explains this in more detail](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23customization).
+    - **A:** Go to that plugin's settings, click the Abracadabra ˅ control menu, and select "Reset Plugin Layout". [Our Customization Guide explains this in more detail](https://th0rgarden.github.io/abracadabra-for-obsidian/#customization).
         
 - **Q: Where are my "Plugin Notes" stored?**
     
-    - **A:** As standard Markdown files in your vault. The path is configurable in settings. This makes them searchable, linkable, and future-proof. [Learn more about how Plugin Notes integrate with your vault](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23ref-plugin-notes).
+    - **A:** As standard Markdown files in your vault. The path is configurable in settings. This makes them searchable, linkable, and future-proof. [Learn more about how Plugin Notes integrate with your vault](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-plugin-notes).
         
 - **Q: How do I report a bug for Abracadabra itself?**
     
@@ -161,9 +161,9 @@ This covers the most common questions. For an even more comprehensive list, incl
 
 ## For Developers & Themers
 
-Abracadabra is designed to foster a symbiotic relationship between developers and users. By making your plugin easier to understand and use, it increases adoption, user satisfaction, and support. For a deep dive into the plugin's architecture and CSS customization, check out the [**For Developers**](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23for-developers) section of the docs.
+Abracadabra is designed to foster a symbiotic relationship between developers and users. By making your plugin easier to understand and use, it increases adoption, user satisfaction, and support. For a deep dive into the plugin's architecture and CSS customization, check out the [**For Developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#for-developers) section of the docs.
 
-- **Make Your Plugin "Abracadabra-Friendly"**: In your manifest.json, include a valid repo link and a fundingUrl. For smart Docs and Wiki buttons, add a documentation link to your README.md and enable the Wiki on your GitHub repo. ([Guide →](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23for-developers))
+- **Make Your Plugin "Abracadabra-Friendly"**: In your manifest.json, include a valid repo link and a fundingUrl. For smart Docs and Wiki buttons, add a documentation link to your README.md and enable the Wiki on your GitHub repo. ([Guide →](https://th0rgarden.github.io/abracadabra-for-obsidian/#for-developers))
     
 
 ---
@@ -185,7 +185,7 @@ I'm proud to have invested 150+ hours so for into crafting Abracadabra for the O
 </p>  
 ### Bug Reports & Feature Requests  
 
-Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2FTh0rGarden%2FAbracadabra%2Fissues). Before submitting, you may want to check the [bug reporting guide](https://www.google.com/url?sa=E&q=https%3A%2F%2Fth0rgarden.github.io%2FAbracadabra-Docs%2F%23faq) in our docs for tips on creating the most effective reports. Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
+Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2FTh0rGarden%2FAbracadabra%2Fissues). Before submitting, you may want to check the [bug reporting guide](https://th0rgarden.github.io/abracadabra-for-obsidian/#faq) in our docs for tips on creating the most effective reports. Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
 
 ---
 
