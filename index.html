@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abracadabra for Obsidian - Documentation</title>
+    <meta name="description" content="The definitive documentation for Abracadabra, the command center for your Obsidian plugins. Master and command your plugins with a unified, dynamic control deck.">
+    <meta name="author" content="Th0rGarden">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a972ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 12V8.964'%3E%3C/path%3E%3Cpath d='M14 12V8.964'%3E%3C/path%3E%3Cpath d='M15 12a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2a1 1 0 0 1 1-1z'%3E%3C/path%3E%3Cpath d='M8.5 21H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-2'%3E%3C/path%3E%3C/svg%3E">
+
+    <style>
+        :root {
+            --bg-color: #121212;
+            --sidebar-bg: #1a1a1a;
+            --content-bg: #1e1e1e;
+            --border-color: #333;
+            --text-color: #e0e0e0;
+            --text-muted: #999;
+            --text-heading: #ffffff;
+            --accent-color: #a972ff;
+            --accent-hover: #c39eff;
+            --code-bg: #2a2a2e;
+            --code-text: #d4d4d4;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --sidebar-width: 280px;
+        }
+
+        /* --- Reset & Base Styles --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            display: flex;
+        }
+
+        /* --- Sidebar / Navigation --- */
+        #sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .sidebar-header { margin-bottom: 1.5rem; }
+        .sidebar-header h1 { font-size: 1.75rem; color: var(--text-heading); margin-bottom: 0.25rem; }
+        .sidebar-header p { font-size: 0.9rem; color: var(--text-muted); }
+        #main-nav ul { list-style: none; }
+        #main-nav > ul > li { margin-bottom: 0.1rem; }
+        #main-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            transition: color 0.2s ease, background-color 0.2s ease;
+            position: relative;
+        }
+        #main-nav a:hover { color: var(--text-heading); background-color: var(--content-bg); }
+        #main-nav a.active { color: var(--accent-color); font-weight: 600; }
+        #main-nav a.active::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background-color: var(--accent-color);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+        .sidebar-footer { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
+        .sidebar-footer a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+        .sidebar-footer a:hover { color: var(--accent-hover); }
+
+        /* Consistent Navigation Structure */
+        .nav-group-heading {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            padding: 0.4rem 0.5rem 0.2rem;
+            margin-top: 0.75rem;
+            cursor: default;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+        }
+        .nav-submenu {
+            list-style: none;
+            padding-left: 0.75rem;
+        }
+        .nav-submenu a { font-size: 0.9rem; padding-left: 0.75rem; }
+        .nav-submenu a.active { background-color: var(--content-bg); }
+        .nav-submenu a.active::before { left: 0rem; }
+
+        /* --- Main Content --- */
+        #main-content {
+            margin-left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+            padding: 3rem 4rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        section { display: none; animation: fadeIn 0.4s ease-in-out; }
+        section.active-section { display: block; }
+        h2 { font-size: 2.25rem; color: var(--text-heading); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); }
+        h3 { font-size: 1.75rem; color: var(--text-heading); margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        h4 { font-size: 1.25rem; color: var(--text-heading); margin-top: 2rem; margin-bottom: 1rem; }
+        p, ul, ol { margin-bottom: 1.25rem; max-width: 80ch; }
+        ul, ol { padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        a { color: var(--accent-color); text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: var(--accent-hover); text-decoration: underline; }
+        strong { color: var(--text-heading); font-weight: 600; }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            position: relative;
+        }
+        pre code { background-color: transparent; padding: 0; font-size: 0.9em; line-height: 1.5; }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: #3a3a3e;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            transition: opacity 0.2s ease, background-color 0.2s ease;
+        }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background-color: #4a4a4e; color: var(--text-color); }
+        img { max-width: 100%; height: auto; border-radius: 8px; }
+        .center-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .center-content p { max-width: 70ch; }
+        .badges { margin: 1rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+        blockquote { border-left: 4px solid var(--accent-color); padding-left: 1.5rem; margin: 1.5rem 0; color: var(--text-muted); font-style: italic; }
+        details { background-color: var(--content-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1.25rem; padding: 1rem 1.5rem; }
+        summary { font-weight: 600; color: var(--text-heading); cursor: pointer; padding: 0.5rem 0; }
+        details[open] summary { margin-bottom: 1rem; }
+        hr { border: none; border-top: 1px solid var(--border-color); margin: 3rem 0; }
+        .note {
+            background-color: rgba(169, 114, 255, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .note p:last-child { margin-bottom: 0; }
+
+        .diagram-container {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+        .diagram-box {
+            background-color: var(--sidebar-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        .diagram-box.abracadabra-component {
+            border-left: 3px solid var(--accent-color);
+        }
+        .diagram-box.native-settings {
+            border-left: 3px solid var(--text-muted);
+            opacity: 0.8;
+        }
+        .diagram-box small {
+            display: block;
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.85em;
+            margin-top: 0.25rem;
+        }
+
+        /* --- Mobile & Responsive --- */
+        #mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 44px;
+            height: 44px;
+            background-color: var(--content-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-size: 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        @media (max-width: 1024px) { #main-content { padding: 2rem; } }
+        @media (max-width: 768px) {
+            body.menu-open #sidebar { transform: translateX(0); }
+            #sidebar { transform: translateX(-100%); box-shadow: 5px 0 15px var(--shadow-color); }
+            #main-content { margin-left: 0; width: 100%; padding: 2rem 1.5rem; }
+            #mobile-menu-toggle { display: block; }
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
+    <aside id="sidebar">
+        <div class="sidebar-header">
+            <h1>Abracadabra ✨</h1>
+            <p>Plugin Documentation</p>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li>
+                    <div class="nav-group-heading">Getting Started</div>
+                    <ul class="nav-submenu">
+                        <li><a href="#introduction" class="nav-link">Introduction</a></li>
+                        <li><a href="#installation" class="nav-link">Installation</a></li>
+                        <li><a href="#core-concepts" class="nav-link">Core Concepts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="nav-group-heading">Guides</div>
+                    <ul class="nav-submenu">
+                        <li><a href="#use-cases" class="nav-link">Use Cases & Workflows</a></li>
+                        <li><a href="#customization" class="nav-link">Customization </a></li>
+                        <li><a href="#bonus-features" class="nav-link">Bonus Features & Extras</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="nav-group-heading">Reference</div>
+                    <ul class="nav-submenu">
+                        <li><a href="#ref-new-settings-page" class="nav-link">Your New Settings Page</a></li>
+                        <li><a href="#ref-standalone-views" class="nav-link">Popout & Tab Views</a></li>
+                        <li><a href="#ref-info-card" class="nav-link">Info Card</a></li>
+                        <li><a href="#ref-controls-menu" class="nav-link">Controls Menu</a></li>
+                        <li><a href="#ref-readme-viewer" class="nav-link">Readme Viewer</a></li>
+                        <li><a href="#ref-command-module" class="nav-link">Command Module</a></li>
+                        <li><a href="#ref-commands-list" class="nav-link">Commands & Hotkeys</a></li>
+                        <li><a href="#ref-plugin-notes" class="nav-link">Plugin Notes</a></li>
+                        <li><a href="#ref-console-logger" class="nav-link">Console Logger</a></li>
+                        <li><a href="#settings-reference" class="nav-link">Settings Reference</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="nav-group-heading">Community</div>
+                     <ul class="nav-submenu">
+                        <li><a href="#for-developers" class="nav-link">For Developers</a></li>
+                        <li><a href="#support-mission" class="nav-link">Support & Mission</a></li>
+                        <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="https://github.com/Th0rGarden/Abracadabra" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+    </aside>
+
+    <main id="main-content">
+
+        <!-- ====================================================================== -->
+        <!-- Getting Started                                                        -->
+        <!-- ====================================================================== -->
+        <section id="introduction">
+            <div class="center-content">
+                <img src="https://raw.githubusercontent.com/Th0rGarden/PluginSidekick/main/assets/pk-logo-banner.png" alt="Abracadabra Banner" style="max-width: 700px; margin-bottom: 2rem;">
+                <p style="font-size: 1.25rem; color: var(--text-heading);">Master and command your Obsidian plugins.</p>
+                <p>Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, the secrets are revealed: every <a href="#ref-commands-list">command</a>, every <a href="#ref-plugin-notes">note</a>, every hidden feature—summoned into one unified, dynamic <a href="#core-concepts">control deck</a>.</p>
+                <p>No more context switching. No more feature blindness. <strong>Just pure, focused power—finally in your hands.</strong></p>
+                <div class="badges">
+                    <a href="https://github.com/Th0rGarden/Abracadabra/releases/latest"><img src="https://img.shields.io/github/v/release/Th0rGarden/Abracadabra?style=for-the-badge&color=blueviolet" alt="Latest Release"></a>
+                    <a href="https://github.com/Th0rGarden/Abracadabra/releases/latest"><img src="https://img.shields.io/github/downloads/Th0rGarden/Abracadabra/total?style=for-the-badge&color=blueviolet" alt="Total Downloads"></a>
+                    <a href="https://github.com/Th0rGarden/Abracadabra/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Th0rGarden/Abracadabra?style=for-the-badge" alt="License"></a>
+                </div>
+            </div>
+            <hr>
+            <h2>What is Abracadabra?</h2>
+            <p>Abracadabra is a management console that fundamentally redefines your relationship with the Obsidian plugin ecosystem, elevating your ability to manage, comprehend, and command your tools. It also provides universal quality-of-life upgrades, like adding a <a href="#bonus-features">search bar to other plugins' settings pages</a>.</p>
+            <h3>🔒 The Problem</h3>
+            <p>The potential of many plugins is latent, locked away behind fragmented interfaces. Documentation lives on GitHub, commands in the palette, <a href="#ref-commands-list">hotkeys</a> buried in settings. This forces constant context switching, breaks your flow state, and leads to "feature blindness"—where you only leverage a fraction of a plugin's true power.</p>
+            <h3>🪄 Enter Abracadabra</h3>
+            <p>Abracadabra consolidates this disparate information into a single, coherent interface. It <strong>summons a dynamic <a href="#core-concepts">Command Deck</a> for each plugin</strong>—a powerful, unified workspace. This drastically reduces cognitive friction and helps you unlock the full potential of your tools.</p>
+            <h3>The Three Views</h3>
+            <p>Access Abracadabra's power anywhere in your workspace through three distinct views:</p>
+            <ol>
+                <li><strong><a href="#ref-new-settings-page">Inline View</a>:</strong> Integrates directly into any plugin's settings page.</li>
+                <li><strong><a href="#ref-standalone-views">Pop-out Window</a>:</strong> A floating, <strong>draggable, and resizable</strong> window for parallel work.</li>
+                <li><strong><a href="#ref-standalone-views">Dedicated View</a>:</strong> A full-pane view you can place anywhere in your workspace.</li>
+            </ol>
+        </section>
+
+        <section id="installation">
+            <h2>Installation</h2>
+            <h3>From Community Plugins (Coming Soon)</h3>
+            <p>Abracadabra is awaiting approval to be listed in the official community plugins browser. Until then, please use the BRAT method below.</p>
+            <h3>Using BRAT (Recommended)</h3>
+            <p>BRAT (Beta Reviewer’s Auto-update Tool) is currently the best way to install the plugin and receive updates.</p>
+            <ol>
+                <li>Install the <a href="https://github.com/TfTHacker/obsidian42-brat" target="_blank" rel="noopener noreferrer">BRAT</a> plugin from the Community Plugins browser in Obsidian.</li>
+                <li>Enable BRAT in your settings under the "Community plugins" tab.</li>
+                <li>Open the command palette (<code>Ctrl/Cmd + P</code>) and run the command <code>BRAT: Add a beta plugin for testing</code>.</li>
+                <li>Paste the following repository path into the prompt:
+                    <pre><code>Th0rGarden/Abracadabra</code></pre>
+                </li>
+                <li>Click "Add Plugin". BRAT will install it.</li>
+                <li>Finally, go back to the <strong>Community plugins</strong> tab in your settings and enable "Abracadabra".</li>
+            </ol>
+        </section>
+
+        <section id="core-concepts">
+            <h2>Core Concepts</h2>
+            <p>Understanding a few key concepts will help you get the most out of Abracadabra.</p>
+            <h3>The Command Deck</h3>
+            <p>The central idea of Abracadabra: a unified interface created for *every other plugin* you have installed. Instead of hunting for information in different places, the Command Deck summons everything into one place: documentation, commands, notes, and more.</p>
+            <h3>Components</h3>
+            <p>The Command Deck is modular, built from a suite of powerful tools called "Components". Each serves a specific purpose. Show, hide, and reorder these components to create the perfect workspace for your needs.</p>
+            <p>Available components:</p>
+            <ul>
+                <li><strong><a href="#ref-info-card">Info Card</a>:</strong> The control panel for a plugin.</li>
+                <li><strong><a href="#ref-readme-viewer">Readme Viewer</a>:</strong> In-app documentation.</li>
+                <li><strong><a href="#ref-command-module">Command Module</a>:</strong> A customizable grid of command buttons.</li>
+                <li><strong><a href="#ref-commands-list">Commands & Hotkeys</a>:</strong> A complete list of a plugin's commands.</li>
+                <li><strong><a href="#ref-plugin-notes">Plugin Notes</a>:</strong> A personal scratchpad for each plugin.</li>
+                <li><strong><a href="#ref-console-logger">Console Logger</a>:</strong> A live debugging tool.</li>
+            </ul>
+            <div class="note">
+                <p><strong>Tip:</strong> Components are designed to work together. For example, use the <a href="#ref-commands-list">Commands & Hotkeys</a> list to discover a plugin's actions, then add your favorites to a custom <a href="#ref-command-module">Command Module</a> for easy access. It's all about building the perfect interface for *you*.</p>
+            </div>
+            <h3>The Layout System</h3>
+            <p>A powerful two-tiered layout system gives you complete control over your workspace.</p>
+            <ul>
+                <li><strong>🌍 <a href="#customization">Global Layout</a>:</strong> In Abracadabra's main settings, define the master layout. This default order and visibility applies to all plugins.</li>
+                <li><strong>🔬 <a href="#customization">Per-Plugin Layout</a>:</strong> When viewing a specific plugin, use the <a href="#ref-controls-menu"><code>Abracadabra ˅</code> menu</a> to override the global layout. Hide a component just for that plugin, or reorder them into a unique configuration, tailoring the Command Deck to the specific needs of each tool.</li>
+            </ul>
+        </section>
+
+        <!-- ====================================================================== -->
+        <!-- Use Cases & Workflows                                                  -->
+        <!-- ====================================================================== -->
+        <section id="use-cases">
+            <h2>Use Cases & Workflows</h2>
+            <p>Abracadabra is valuable for every type of Obsidian user. Here’s how different people have integrated it into their daily workflows.</p>
+
+            <h3>Alex, the Plugin Power User</h3>
+            <blockquote>"I love trying new plugins, but I can never remember all the commands or find the documentation when I need it. I feel like I'm only using 10% of my tools."</blockquote>
+            <p>My process for tackling a new plugin is always the same now. Whenever I install something complex, like 'Task Archiver Pro', the first thing I do is open its settings and immediately pop out the readme viewer into a <strong><a href="#bonus-features">fully draggable and resizable window</a></strong>. I dock it to the side of my screen, which lets me read the setup guide while I'm actually configuring the settings in the main window. It's like having a dedicated monitor just for the docs. Once I have a basic understanding, I'll scan the <a href="#ref-commands-list">commands and hotkeys list</a>. This is where I see what the plugin *really* does. I can run commands directly from the list to test them out before I commit to a hotkey.</p>
+            <p>After I've figured out the key actions I'll be using regularly, I build myself a custom interface with the <a href="#ref-command-module">command module</a>. I'll click 'Edit' and create a grid with buttons for 'Archive Tasks' and 'Task Report', giving them custom icons and colors. It turns a complex plugin into a simple, visual app that's tailored to my specific needs. And of course, the <a href="#ref-info-card">info card</a> is great for keeping things up to date; if I see a new beta is available in the release notes, I can update with a single click.</p>
+            <img src="assets/screenshot-command-module-populated.png" alt="A populated Command Module with custom icons and colors for various tasks." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            <div class="note">
+                <p><strong>Power User Tip:</strong> If you have a multi-monitor setup, drag the pop-out window to your second screen. This creates an unparalleled command center experience, keeping documentation or a command grid permanently visible while you work in Obsidian on your main display.</p>
+            </div>
+
+            <h3>Ben, the Focused Writer</h3>
+            <blockquote>"Context switching is my biggest enemy. Leaving my note to look up a hotkey or a plugin's feature completely breaks my concentration."</blockquote>
+            <p>As a writer, staying in a state of flow is everything. You know that moment when you're deep into a thought and you need to remember some obscure syntax for a citation plugin? That used to be a guaranteed way to lose my train of thought. My solution now is to keep Abracadabra handy. If I need to check a format, I just <a href="#ref-readme-viewer">pop out the readme</a> for the citation plugin, use the full-text search to find what I need in seconds, and close it. The whole interruption is minimal.</p>
+            <p>I also make heavy use of the <a href="#ref-plugin-notes">plugin notes</a>. For every tool, I have a little scratchpad where I keep my own personal tips or code snippets. For my citation plugin, I have a note that says, <code>// Remember to use the @ symbol for in-text citations.</code> It's my own little knowledge base, and since the notes are just Markdown files in my vault, they're completely searchable and future-proof. It's all about reducing friction. If I need to remember a hotkey for something like typewriter scrolling, I don't have to break my flow to hunt through settings; I just use the <strong><a href="#bonus-features">"Open settings for another plugin..." command</a></strong> from the command palette to jump straight there, glance at the commands list, and I'm back to my sentence before the idea has a chance to fade.</p>
+            <div class="note">
+                <p><strong>Power User Tip:</strong> Because <a href="#ref-plugin-notes">Plugin Notes</a> are just Markdown files, you can use the Dataview plugin to query them. For example, you could create a table of all your plugin notes that contain the tag <code>#workflow-idea</code> to get a high-level overview of your custom setups.</p>
+            </div>
+
+            <h3>Chloe, the New Explorer</h3>
+            <blockquote>"I remember feeling so overwhelmed by plugins. I wasn't sure what they did or how to manage them. It felt like a club for experts, and I didn't have the secret password."</blockquote>
+            <p>If you're new to Obsidian, my advice is this: don't worry about the complicated settings at first. Just install a plugin you're curious about, like 'Image Toolkit', and open its settings. Abracadabra will be there. The first thing you should look at is the <a href="#ref-commands-list">commands and hotkeys list</a>. This was my "aha!" moment. It's not just a list of settings; it's a list of *actions*. I saw things like 'Zoom in', 'Rotate image', 'Copy image to clipboard', and I could even click the 'Run' button to see what happened. It was the first time I felt like I understood what a plugin could actually *do* for me.</p>
+            <p>As I got more comfortable, I even used the <a href="#ref-controls-menu"><code>Abracadabra ˅</code> menu</a> to reorder the layout, moving the commands list to the top because that's what I found most helpful. It really helps you make your workspace your own. But the thing I love most is how it helps connect you to the community. I was so grateful for a plugin that was saving me time, and I saw the developer's name right on the <a href="#ref-info-card">info card</a>. I'd heard that many Obsidian developers are just hobbyists doing this for free, and it often feels hard to find how to thank them. Right there was a big <a href="#ref-info-card">'Donate' button</a>. What I love is that Abracadabra scans everywhere—the plugin's official files, its readme—to find all the ways you can support the developer. I clicked the button, and a clean dropdown appeared with their 'Buy Me a Coffee' and 'GitHub Sponsors' links. I didn't have to hunt for them, and I could choose the platform I preferred. It felt good to be able to easily support the people building these amazing tools.</p>
+
+            <h3>David, the Plugin Developer</h3>
+            <blockquote>"From a developer's perspective, let me tell you what a difference this makes. I want to provide great support for my plugin, but it's hard when users don't provide enough information."</blockquote>
+            <p>My biggest challenge as a developer *was* getting good bug reports. I used to get GitHub issues that just said 'the button doesn't work'. It was impossible to debug. Now, I often get issues from users who have Abracadabra, and the difference is night and day. They'll tell me they used the <a href="#ref-info-card">submit issue button</a>, and when I look at the issue body, it's perfect. It has the user's OS, their Obsidian version, and the exact version of my plugin they're using. The problem is already half-solved before I even write a reply.</p>
+            <p>For the really tricky bugs, it's even better. I can now ask a user, 'Could you please open my plugin's settings, enable the <strong><a href="#ref-console-logger">Console Logger component</a></strong> from the Abracadabra menu, perform the action that fails, and then use the <strong><a href="#ref-info-card">copy console logs button</a></strong> in the info card to paste the results here?' A few minutes later, I have a perfect, filtered log showing the exact error message and where it's happening in the code. I can fix bugs in a fraction of the time. It has created a communication bridge that makes supporting my plugin a joy instead of a chore.</p>
+        </section>
+
+        <section id="customization">
+            <h2>Customization Guide</h2>
+            <p>Abracadabra is designed to be highly customizable, allowing you to tailor the interface to your exact preferences, both globally and on a per-plugin basis.</p>
+            
+            <h3>🌍 The Global Layout (Master Configuration)</h3>
+            <p>Your primary customization hub is Abracadabra's own settings page (<code><a href="#settings-reference">Settings → Abracadabra</a></code>). Here you can:</p>
+            <ul>
+                <li><strong>Set the Global Component Order:</strong> Use the arrows in the <a href="#settings-reference">Component Layout & Order</a> card to define the default order in which components appear for all plugins. You can even move the plugin's native settings block.</li>
+                <li><strong>Enable/Disable Components Globally:</strong> Toggle components on or off by default. For example, if you don't use the <a href="#ref-console-logger">Console Logger</a>, you can disable it here to hide it from all plugins.</li>
+                <li><strong>Configure Component Defaults:</strong> Each component has its own set of default settings, such as whether it should be expanded or collapsed, default sizes, colors, and more.</li>
+            </ul>
+
+            <h3>🔬 The Per-Plugin Layout (The Controls Menu)</h3>
+            <p>When you are viewing a specific plugin's Command Deck (in any of the three views), you have access to the <a href="#ref-controls-menu"><code>Abracadabra ˅</code> menu</a> in the <a href="#ref-info-card">Info Card</a> header. This menu allows you to make overrides for that specific plugin.</p>
+            <ul>
+                <li><strong>Control Visibility:</strong> Temporarily show or hide components for the current plugin without changing your global defaults.</li>
+                <li><strong>Reorder Layout:</strong> Change the order of components just for this plugin using a drag-and-drop interface right inside the menu.</li>
+                <li><strong>Pin Section States:</strong> If you prefer manual control, you can disable <a href="#settings-reference">"Auto-save section states"</a> in the global settings. Then, you can use this menu to "pin" a section as expanded or collapsed, and it will always open that way for that specific plugin.</li>
+                <li><strong>Reset Plugin Layout:</strong> This powerful option removes all per-plugin overrides (visibility, order, and pinned states), reverting it back to your global default settings.</li>
+            </ul>
+            <img src="assets/gif-layout-customization.gif" alt="A GIF showing the Controls Menu being used to drag and drop the Readme component to a new position." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            <div class="note">
+                <p><strong>Tip:</strong> Don't be afraid to experiment with per-plugin layouts! The <strong>Reset Plugin Layout</strong> button in the <a href="#ref-controls-menu">Controls Menu</a> is your safety net. If you ever make a mess of a plugin's layout, one click will restore it to your global defaults.</p>
+            </div>
+        </section>
+
+        <section id="bonus-features">
+            <h2>Bonus Features & Universal Enhancements</h2>
+            <p>Abracadabra doesn't just enhance individual plugin pages; it upgrades your entire Obsidian experience with powerful, universal features that work everywhere.</p>
+            
+            <h3>Search Any Plugin's Settings</h3>
+            <p>Tired of scrolling through dozens of settings to find that one toggle? Abracadabra injects a powerful <a href="#settings-reference">search bar</a> directly into the native settings pages of <em>other</em> plugins. This is a universal upgrade to the entire Obsidian settings experience, eliminating tedious hunting and saving you time.</p>
+            <img src="assets/screenshot-settings-search.png" alt="A screenshot showing the search bar filtering the settings of another plugin." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+
+            <h3>Quick Access with the Plugin Picker Status Bar</h3>
+            <p>Enable the <a href="#settings-reference">status bar item</a> in settings to get a persistent ✨ icon in your Obsidian status bar. Clicking it opens a fuzzy-searchable list of all your enabled plugins, letting you instantly launch the Abracadabra pop-out window for any of them. The list intelligently sorts by frequency of use, and you can "star" your favorite plugins to pin them to the top.</p>
+            <div class="note">
+                <p><strong>Tip:</strong> Star your most frequently used or complex plugins in the Plugin Picker list. This pins them to the top, giving you one-click access to their Command Deck from anywhere in Obsidian.</p>
+            </div>
+
+            <h3>Uncap Your Theme Picker</h3>
+            <p>If you're a theme enthusiast, you've likely noticed that Obsidian's theme selection list gets cut off if you have too many installed. Abracadabra intelligently patches this modal, removing the item limit and allowing you to see and search your <em>entire</em> collection. It's a simple but profound fix for a common frustration, which can be toggled in <a href="#settings-reference">Extras & Dev Tools</a>.</p>
+
+            <h3>Navigate at Lightning Speed with New Commands</h3>
+            <p>Abracadabra adds new, powerful commands to the Obsidian command palette. The most notable is <strong><a href="#settings-reference">"Open settings for another plugin..."</a></strong>, which presents a fuzzy-searchable list of all your installed plugins. This allows you to jump instantly to any settings page from anywhere in your vault, bypassing the need to manually navigate through the settings sidebar. It also creates commands to <strong><a href="#ref-info-card">enable/disable</a></strong> any plugin.</p>
+
+            <h3>Enhance the Installed plugins list</h3>
+            <p>The main "Community Plugins" tab in Obsidian's settings gets new powers. You can enable options in <a href="#settings-reference">Extras & Dev Tools</a> to add:
+                <ul>
+                    <li>An <strong>Abracadabra Shortcut Button (✨)</strong> next to every installed plugin, allowing you to launch its pop-out window directly from the list.</li>
+                    <li>A <strong>"<a href="#ref-info-card">Submit Issue</a>" Button</strong> next to each plugin, providing another convenient shortcut for bug reporting.</li>
+                </ul>
+            </p>
+            <img src="assets/screenshot-enhanced-plugin-list.png" alt="A screenshot of the Community Plugins list showing the new Abracadabra and Submit Issue buttons." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+
+            <h3>Create a True Multi-Window Workspace</h3>
+            <p>The pop-out window is more than just a pop-out. It's a fully independent, <strong>draggable and resizable</strong> window. Drag it by its header to position it anywhere on your screen, and pull its corners or edges to resize it to the perfect dimensions. This allows you to create custom, multi-monitor-like layouts, viewing documentation alongside settings or keeping a command grid handy while you work. Default size and position can be set in the <a href="#settings-reference">Abracadabra Window Settings</a>.</p>
+            <img src="assets/gif-popout-window.gif" alt="A GIF showing the pop-out window being opened, dragged around the screen, and resized." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+
+            <h3>Discover with Intelligent Action Buttons</h3>
+            <p>The action buttons in the <a href="#ref-info-card">Info Card</a> are smarter than they look. Buttons like "Docs" and "Wiki" aren't just static links; they only appear if Abracadabra intelligently detects that the resource actually exists by scanning the plugin's files and its GitHub repository. This results in a cleaner, more relevant UI that adapts to each plugin's available resources.</p>
+        </section>
+
+        <!-- ====================================================================== -->
+        <!-- Component Reference                                                    -->
+        <!-- ====================================================================== -->
+        <section id="ref-new-settings-page">
+            <h2>Reference: Your New Settings Page</h2>
+            <p>When you install Abracadabra, it fundamentally upgrades every plugin's settings page. It doesn't replace the original settings; it enhances them by injecting the <strong>Command Deck</strong> directly into the same view. This creates a powerful, all-in-one workspace for configuring, learning, and managing each plugin.</p>
+            <img src="assets/screenshot-command-deck.png" alt="A screenshot of a plugin's settings page enhanced with Abracadabra components." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            
+            <div class="diagram-container">
+                <div class="diagram-box abracadabra-component">
+                    Abracadabra: Info Card
+                    <small>Management & Actions</small>
+                </div>
+                <div class="diagram-box abracadabra-component">
+                    Abracadabra: Readme Viewer
+                    <small>Documentation</small>
+                </div>
+                <div class="diagram-box native-settings">
+                    Plugin's Native Settings
+                    <small>The original toggles & inputs</small>
+                </div>
+                <div class="diagram-box abracadabra-component">
+                    Abracadabra: Command Module
+                    <small>Custom Buttons</small>
+                </div>
+            </div>
+
+            <h3>Key Concepts</h3>
+            <h4>A Unified Workspace</h4>
+            <p>The primary goal of this view is to eliminate context switching. You can read a plugin's documentation in the <a href="#ref-readme-viewer">Readme Viewer</a> while simultaneously adjusting its options in the native settings block, all without leaving the page.</p>
+
+            <h4>The Native Settings "Component"</h4>
+            <p>Abracadabra treats the plugin's original settings area as just another component in the layout. In the <a href="#settings-reference">Component Layout & Order</a> settings, this is represented by the <code>--- Plugin's Native Settings ---</code> separator. This means you can reorder it! If you prefer to see a plugin's commands before its settings, you can drag the <a href="#ref-commands-list">Commands & Hotkeys</a> component above the native settings block.</p>
+
+            <h4>Context is King</h4>
+            <p>This integrated view is the ideal place to be when you are first learning a plugin or making detailed configuration changes. Everything you need—from documentation to command testing—is at your fingertips, right where you need it.</p>
+        </section>
+
+        <section id="ref-standalone-views">
+            <h2>Reference: Popout & Tab Views</h2>
+            <p>While the <a href="#ref-new-settings-page">enhanced settings page</a> is for configuration, the Popout and Tab views are designed for <strong>action and reference</strong>. These views provide a "pure" Command Deck experience, intentionally separating Abracadabra's tools from the plugin's native settings.</p>
+
+            <div class="diagram-container">
+                <div class="diagram-box abracadabra-component">
+                    Abracadabra: Info Card
+                    <small>Management & Actions</small>
+                </div>
+                <div class="diagram-box abracadabra-component">
+                    Abracadabra: Command Module
+                    <small>Your custom command grid</small>
+                </div>
+                <div class="diagram-box abracadabra-component">
+                    Abracadabra: Plugin Notes
+                    <small>Your personal cheat sheet</small>
+                </div>
+            </div>
+
+            <h3>Key Concepts</h3>
+            <h4>The Pure Command Deck</h4>
+            <p>The most important difference in these views is the absence of the plugin's native settings. This creates a streamlined interface focused entirely on using the plugin's features, not configuring them. It's your custom-built app for that plugin.</p>
+
+            <h4>Parallel Workflows (Popout Window)</h4>
+            <p>The <a href="#bonus-features">popout window</a> is a game-changer for productivity. You can drag it anywhere on your screen (or even to another monitor) to keep a <a href="#ref-command-module">Command Module</a> or a documentation page visible while you write or work in your main Obsidian window. It's like having a dedicated sidecar for your plugins.</p>
+
+            <h4>Organized Workspace (Tab View)</h4>
+            <p>The tab view allows you to create a more permanent, organized layout within your main workspace. For example, you could create a workspace with dedicated tabs for your most-used plugins, each showing a custom-built Command Deck. This is perfect for creating task-specific layouts (e.g., a "Writing" workspace with tabs for your citation and editing plugins).</p>
+
+            <h4>How to Access</h4>
+            <ul>
+                <li><strong>Popout Window:</strong> Click the popout icon (❐) in the <a href="#ref-info-card">Info Card</a> header, or use the ✨ shortcut in the <a href="#bonus-features">Community Plugins list</a> or from the <a href="#bonus-features">status bar picker</a>.</li>
+                <li><strong>Tab View:</strong> Open the <a href="#ref-controls-menu">Controls Menu</a> (<code>Abracadabra ˅</code>) and select "Open in new tab".</li>
+            </ul>
+        </section>
+
+        <section id="ref-info-card">
+            <h2>Component: Info Card</h2>
+            <p>The brain of the <a href="#core-concepts">Command Deck</a>. A mission control panel providing at-a-glance metadata and a powerful suite of one-click actions to manage, update, and learn about the plugin.</p>
+            <img src="assets/screenshot-info-card.png" alt="A detailed screenshot of the Info Card component." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            <hr>
+            <h4>The Header</h4>
+            <p>The top bar of the Info Card. Always visible, providing primary controls for the component and for Abracadabra itself.</p>
+            <ul>
+                <li><strong>Expand/Collapse:</strong> The entire left side of the header, containing the plugin's name, is a toggle. Clicking it expands or collapses the main content area below. A <code>▶</code> icon indicates the current state.</li>
+                <li><strong>Abracadabra Controls (Right Side):</strong>
+                    <ul>
+                        <li><strong><a href="#ref-controls-menu"><code>Abracadabra ˅</code> Menu</a>:</strong> The master control menu for the current plugin's layout. Opens a dropdown to show/hide components, reorder them with a drag-and-drop interface, pin their state, or reset the layout to the global default.</li>
+                        <li><strong><code>Open in popout window</code> Button (❐):</strong> (Standard settings view only) Instantly opens the entire Abracadabra interface for the current plugin in a separate, <a href="#bonus-features">draggable, and resizable window</a>.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h4>Main Content Area</h4>
+            <p>The collapsible body of the Info Card, containing detailed information and the main action buttons.</p>
+
+            <h5>Identity & Status</h5>
+            <p>Displays the plugin's core identity with intelligent enhancements.</p>
+            <ul>
+                <li><strong>Author & Description:</strong> The plugin's author and its official description. Abracadabra intelligently attempts to find and link the author's name to their GitHub profile, fostering a stronger connection.</li>
+                <li><strong>Status Indicators:</strong> Subtle labels in the header identify the plugin's source: <code>(BRAT)</code> for <a href="#installation">BRAT installs</a> or <code>(Sideloaded)</code> for custom/manual installs, giving you immediate context. A prominent yellow banner appears if the plugin has been removed from the community store.</li>
+            </ul>
+
+            <h5>Version Management</h5>
+            <p>A dynamic line giving a complete, real-time overview of the plugin's version status.</p>
+            <ul>
+                <li><strong>Installed Version:</strong> Your current version number.</li>
+                <li><strong>Status Text:</strong> A message indicating the current status: <code>✓ Up to date</code>, <code>Update to [version] available</code>, <code>Beta [version] available</code>, or an error state.</li>
+                <li><strong>Update Buttons:</strong> Appear when an update is found for one-click installation of stable or beta releases.</li>
+                <li><strong>Release Notes (📜):</strong> Opens a modal window with changelogs for recent versions.</li>
+                <li><strong>Refresh (🔄):</strong> Forces an immediate re-check for new versions, bypassing the cache.</li>
+            </ul>
+
+            <h5>The Action Bar</h5>
+            <p>Your primary toolkit for interacting with the plugin and its developer, with buttons grouped by function.</p>
+            <ul>
+                <li><strong>Management & Support:</strong>
+                    <ul>
+                        <li><strong><code>🔌 Enable/Disable Plugin</code>:</strong> Toggles the plugin on or off.</li>
+                        <li><strong><code>💖 Donate</code>:</strong> A smart button that scans the manifest and README for all funding links. Becomes a dropdown menu if multiple platforms (Ko-fi, Patreon, etc.) are found.</li>
+                    </ul>
+                </li>
+                <li><strong>Intelligent Exploration & Learning:</strong>
+                    <ul>
+                        <li><strong><code>🐙 GitHub</code>:</strong> Direct link to the source code.</li>
+                        <li><strong><code>📖 Docs</code>:</strong> This button is smart. It actively scans the plugin's README for keywords like "documentation," "docs," or "guide" and only appears if a relevant link is found, reducing UI clutter.</li>
+                        <li><strong><code>📚 Wiki</code>:</strong> This button uses an advanced detection system. Instead of just checking for a standard URL, it scans the plugin's main GitHub page to see if a Wiki tab is actually present, ensuring the button only appears when a wiki genuinely exists.</li>
+                        <li><strong><code>📺 YouTube</code>:</strong> This is a dynamic search query generator that uses the current plugin's name to find relevant tutorials and showcases on YouTube.</li>
+                    </ul>
+                </li>
+                <li><strong>Troubleshooting & Development:</strong>
+                    <ul>
+                        <li><strong><code>🐛 Submit Issue</code>:</strong> Opens a new GitHub issue, pre-filled with essential debug info. See the <a href="#faq">FAQ for the workflow</a>.</li>
+                        <li><strong><code>📋 Copy Console Logs</code>:</strong> One-click copy of logs from the <a href="#ref-console-logger">Console Logger</a> for this specific plugin.</li>
+                        <li><strong><code>🔧 Dev</code> (Menu):</strong> A dropdown with power-user tools like Reload Plugin, Open Plugin Folder, Add .hotreload file, and Reveal/View `data.json`. This menu is fully configurable in <a href="#settings-reference">settings</a>.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="note">
+                <p><strong>Power Combo:</strong> The <a href="#ref-controls-menu"><code>Abracadabra ˅</code> menu</a> in the header is the central nervous system for the entire Command Deck. It allows you to <a href="#customization">customize the visibility and order</a> of all other components on a per-plugin basis, transforming the interface to perfectly match your needs for each specific tool.</p>
+            </div>
+        </section>
+
+        <section id="ref-controls-menu">
+            <h2>Component: Controls Menu</h2>
+            <p>The <code>Abracadabra ˅</code> menu, located in the header of the <a href="#ref-info-card">Info Card</a>, is the master control panel for customizing the layout and behavior of the Command Deck on a <strong>per-plugin basis</strong>. It allows you to override your <a href="#settings-reference">global settings</a> for specific plugins, tailoring the interface to your exact needs for each tool.</p>
+            <img src="assets/screenshot-controls-menu.png" alt="A screenshot of the Controls Menu, showing visibility toggles and the reorder list." style="max-width: 400px; margin: 1.5rem auto; display: block;">
+            <hr>
+
+            <h3>Navigation</h3>
+            <ul>
+                <li><strong>Open Abracadabra Settings:</strong> A quick shortcut to jump directly to Abracadabra's main <a href="#settings-reference">settings page</a>.</li>
+                <li><strong>Open in popout window:</strong> Launches the entire Command Deck for the current plugin into a separate, <a href="#bonus-features">draggable, and resizable window</a>.</li>
+                <li><strong>Open in new tab:</strong> Opens the Command Deck in a dedicated, full-pane <a href="#introduction">Dedicated View</a> within your Obsidian workspace.</li>
+            </ul>
+
+            <h3>Visible Components</h3>
+            <p>This section of the menu contains a list of all available components (<a href="#ref-readme-viewer">Readme</a>, <a href="#ref-command-module">Command Module</a>, etc.) with a checkbox next to each one. Use these checkboxes to show or hide components for the current plugin, overriding your global visibility settings.</p>
+            <ul>
+                <li>Unchecking a component hides it only for the plugin you are currently viewing.</li>
+                <li>This allows you to create minimalist layouts for simple plugins while keeping all tools visible for more complex ones.</li>
+            </ul>
+
+            <h3>Component Order</h3>
+            <p>A dynamic, drag-and-drop list that allows you to reorder the components for the current plugin. Simply click and drag any component (including the "Plugin's Native Settings" block) to a new position to create a custom layout.</p>
+            <div class="note">
+                <p><strong>Tip:</strong> This is incredibly powerful for prioritizing information. For a plugin you use for its commands, drag the <strong><a href="#ref-command-module">Command Module</a></strong> to the top. For a plugin you're still learning, move the <strong><a href="#ref-readme-viewer">Readme</a></strong> up.</p>
+            </div>
+
+            <h3>Pin Section States</h3>
+            <p>This group of options only appears if you have disabled <strong><a href="#settings-reference">"Auto-save section states"</a></strong> in the global settings. It gives you manual control over which sections are expanded or collapsed by default for the current plugin.</p>
+            <ul>
+                <li>Clicking a component in this list will "pin" its current state (e.g., if the Readme is currently expanded, clicking "Readme" will pin it as expanded).</li>
+                <li>A pinned icon (📌) will appear next to the component, indicating its state is saved. Click it again to unpin.</li>
+            </ul>
+
+            <h3>Reset</h3>
+            <ul>
+                <li><strong>Reset Plugin Layout:</strong> This is your escape hatch. Clicking this option will remove all per-plugin overrides you've made—visibility, order, and pinned states—and instantly revert the layout for the current plugin back to the <a href="#settings-reference">global defaults</a> you configured in Abracadabra's main settings.</li>
+            </ul>
+        </section>
+
+        <section id="ref-readme-viewer">
+            <h2>Component: Readme Viewer</h2>
+            <p>Brings a plugin's full documentation directly into your workspace, so you can learn how to use a tool while you're configuring it.</p>
+            <img src="assets/screenshot-readme-viewer.png" alt="A screenshot of the Readme Viewer component." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            <hr>
+            <h4>Header & Controls</h4>
+            <p>The header provides the title and a suite of controls to customize your reading experience.</p>
+            <ul>
+                <li><strong>Search Bar:</strong> Full-text search to find any keyword. Highlights all matches and provides `↑`/`↓` buttons and a match count (`1/15`) for easy navigation.</li>
+                <li><strong>Font Controls:</strong> `A+`, `A-`, and `Reset` buttons to adjust font size.</li>
+                <li><strong>Refresh (🔄):</strong> Force-fetches the latest README from its source, bypassing the cache.</li>
+                <li><strong>Expand/Collapse:</strong> Click the title to show or hide the Readme content.</li>
+            </ul>
+
+            <h4>Content & Rendering</h4>
+            <ul>
+                <li><strong>No More Broken Media:</strong> Automatically fixes relative image paths from GitHub and embeds YouTube video links, ensuring all media renders correctly.</li>
+                <li><strong>Configurable Appearance:</strong> <a href="#settings-reference">Global settings</a> allow a "borderless" style for a cleaner look and a choice between full content height or a capped, scrollable box.</li>
+            </ul>
+
+            <h4>Intelligent Fetching & Workflows</h4>
+            <p>The viewer is smart about where it gets documentation, enabling powerful workflows:</p>
+            <ol>
+                <li>First, it tries to fetch the latest version from <strong>GitHub</strong>.</li>
+                <li>If offline, it falls back to a <strong>local cache</strong>.</li>
+                <li>As a final fallback, it loads the <code>README.md</code> file from the <strong>plugin's folder</strong> in your vault.</li>
+            </ol>
+            <div class="note">
+                <p><strong>Power Combo: Live Documentation Preview</strong><br>The local file fallback is a game-changer for developers. If you are editing a plugin on your machine, Abracadabra automatically detects and displays your local <code>README.md</code> file. This allows you to write and preview your documentation in real-time inside Obsidian without pushing to GitHub.</p>
+            </div>
+        </section>
+
+        <section id="ref-command-module">
+            <h2>Component: Command Module</h2>
+            <p>Turns any plugin into a custom-built app. Build a visual grid of buttons for your most-used actions, creating a personal, intuitive interface for any tool.</p>
+            <img src="assets/gif-command-module-build.gif" alt="A GIF showing how to create a new tile in the Command Module." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            <hr>
+            <h4>Build Your Own Interface</h4>
+            <p>Design the perfect launcher. <br/><br/>Click an empty tile to add a new command, not just from the currently active plugin but <i>any plugin</i> in Obsidian. 🎨 Fully customize the tile's label, choose from over 1000 Lucide icons, and set unique background/text colors.
+                <br/><br/> Build cross-plugin dashboards (e.g., a "Writing" board with commands from three different plugins).</li>
+                <br/><br/>Enter Edit mode and access:
+                <ul>
+                    
+                    <li><strong>Board Settings (⚙️):</strong> Configure board-specific defaults like grid dimensions (rows/columns) and default tile/text colors in the <a href="#settings-reference">Command Module Settings</a>.</li>
+                    <li><strong>Clear Board (🗑️):</strong> Wipes the grid clean with one click.</li>
+                    <li><strong>Pre-populate (🪄):</strong> A powerful bridge to the <strong><a href="#ref-commands-list">Commands & Hotkeys</a></strong> component. Instantly fill the board with the plugin's commands. If the "Show commands from other plugins" checkbox is checked in the Commands & Hotkeys component, those related commands will be included too.</li>
+                </ul>
+    
+                <li><strong>Source Plugin Indicator:</strong> If a tile's command comes from a different plugin, a small label appears at the bottom indicating its source.</li>
+            </ul>
+            <div class="note">
+                <p><strong>Power User Tip:</strong> Create a "master" Command Module for a simple utility plugin you rarely configure. Fill it with your most-used commands from <em>other</em> plugins (like Templater, QuickAdd, etc.) to create a universal, cross-plugin command palette you can pop out anytime.</p>
+            </div>
+
+            <h4>Board Management & Integration</h4>
+            <p>Header controls give you full power over the board's structure and content.</p>
+
+            <div class="note">
+                <p><strong>Power Combo: Building Integrated Dashboards</strong><br>The <code>Pre-populate</code> action becomes even more powerful when combined with the <a href="#ref-commands-list">Commands & Hotkeys</a> component. Check the "Show commands from other plugins" box in that component first, and then click <code>Pre-populate</code>. Abracadabra will fill your board not only with the plugin's own commands but also with related commands from other plugins, making it easy to build a truly integrated workflow dashboard.</p>
+            </div>
+        </section>
+
+        <section id="ref-commands-list">
+            <h2>Component: Commands & Hotkeys</h2>
+            <p>Discover every hidden feature. Lists all of a plugin's commands, letting you test-drive them instantly and manage hotkeys without leaving the page.</p>
+            <img src="assets/screenshot-commands-list.png" alt="A screenshot of the Commands & Hotkeys list." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            <hr>
+            <h4>Discovery & Execution</h4>
+            <ul>
+                <li><strong>Run Any Command (▶️):</strong> A "Run" button next to every command triggers it instantly. Perfect for learning a new plugin's capabilities without committing to a hotkey.</li>
+                <li><strong>Hotkey Display:</strong> Shows the currently assigned hotkey for each command, or "Not set".</li>
+                <li><strong>Configure Hotkeys Button:</strong> A master button in the header takes you directly to Obsidian's hotkey settings, pre-filtered for the current plugin.</li>
+            </ul>
+
+            <h4>Smart Filtering & Integration</h4>
+            <ul>
+                <li><strong>Complete Command Registry:</strong> Displays every command registered by the plugin, sorted alphabetically.</li>
+                <li><strong>Uncover Hidden Integrations:</strong> A checkbox in the header expands the list to show commands from *other* plugins that mention the current plugin's name.</li>
+                <li><strong>Source Plugin Indicator:</strong> For commands from other plugins, a small label indicates which plugin it belongs to.</li>
+            </ul>
+            <div class="note">
+                <p><strong>Power Combo: Discover and Build</strong><br>The "Show commands from other plugins" checkbox is a powerful discovery tool. When checked, it not only reveals integrations here but also tells the <strong><a href="#ref-command-module">Command Module's</a></strong> <code>Pre-populate</code> action to include these external commands, helping you build cross-plugin dashboards with one click.</p>
+            </div>
+        </section>
+
+        <section id="ref-plugin-notes">
+            <h2>Component: Plugin Notes</h2>
+            <p>A personal, persistent scratchpad for every plugin, fully integrated into your vault.</p>
+            <img src="assets/screenshot-plugin-notes.png" alt="A screenshot of the Plugin Notes component with text." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            <hr>
+            
+            <h4>Editor Features</h4>
+            <ul>
+                <li><strong>Auto-Save:</strong> Notes save automatically after a configurable delay. A manual save button and status indicator (`Unsaved changes`, `Saving...`, `Saved!`) are also provided.</li>
+                <li><strong>Resizable & Remembers:</strong> Drag the bottom edge to resize the notes area. This height can be remembered on a per-plugin basis.</li>
+                <li><strong>Auto-Collapse:</strong> The section can automatically hide itself if the note file is empty, reducing visual clutter.</li>
+            </ul>
+            <p>Plugin Notes are standard Markdown (<code>.md</code>) files inside your vault, in the folder specified by the <a href="#settings-reference"><code>Notes storage path</code> setting</a>.</p>
+            <p>This deep integration means your plugin notes benefit from Obsidian's core features:</p>
+            <ul>
+                <li><strong>Globally Searchable:</strong> Find notes using Obsidian's built-in search.</li>
+                <li><strong>Linkable:</strong> Link to and from your plugin notes like any other file.</li>
+                <li><strong>Graph View:</strong> Notes appear as nodes in the graph, connected to any linked notes.</li>
+                <li><strong>Tags & Dataview:</strong> Use tags and query your notes with the Dataview plugin.</li>
+            </ul>
+            <div class="note">
+                <p><strong>Tip:</strong> You can link to specific headings within your Plugin Notes from anywhere in your vault. For example, create a link like <code>[[MyPlugin plugin notes#My Custom Snippet]]</code> to jump directly to a specific code block or setup instruction you've saved.</p>
+            </div>
+        </section>
+
+        <section id="ref-console-logger">
+            <h2>Component: Console Logger</h2>
+            <p>A live, in-app debugging tool for power users and developers. Captures and displays console messages without needing the Obsidian Developer Tools.</p>
+            <img src="assets/screenshot-console-logger.png" alt="A screenshot of the Console Logger with filtered logs." style="max-width: 700px; margin: 1.5rem auto; display: block;">
+            <hr>
+            <h4>Live Debugging Feed</h4>
+            <ul>
+                <li><strong>Live Capture:</strong> Intercepts and displays <code>console.log</code>, <code>warn</code>, <code>error</code>, <code>info</code>, and <code>debug</code> messages as they happen.</li>
+                <li><strong>Source Filtering:</strong> Automatically identifies the source plugin for each log. A dropdown in the header lets you filter for the current plugin's logs or view all captured logs. This is essential for isolating issues.</li>
+                <li><strong>Intuitive Interface:</strong> Each log entry is timestamped and color-coded by severity (e.g., errors in red, warnings in yellow), making the feed easy to parse at a glance.</li>
+            </ul>
+            
+            <h4>The Bug-Squashing Superpower</h4>
+            <p>This component is the engine behind Abracadabra's streamlined bug reporting. The header contains one-click buttons to <strong>Copy</strong> all currently displayed logs to the clipboard or <strong>Clear</strong> the feed.</p>
+            <div class="note">
+                <p><strong>Power Combo: The Ultimate Bug Reporting Workflow</strong><br>
+                When a developer asks for logs, your workflow is simple:
+                <ol>
+                    <li>Enable the Console Logger component (via the <a href="#ref-controls-menu"><code>Abracadabra ˅</code> menu</a> in the <a href="#ref-info-card">Info Card</a>).</li>
+                    <li>Perform the action that causes the bug. The logger will capture the error.</li>
+                    <li>Go to the <strong><a href="#ref-info-card">Info Card</a></strong> and click the `📋 Copy Console Logs` button.</li>
+                </ol>
+                This copies the perfectly filtered logs for that specific plugin, ready to be pasted into a GitHub issue created with the `🐛 Submit Issue` button.
+                </p>
+            </div>
+        </section>
+
+        <!-- ====================================================================== -->
+        <!-- Settings Reference                                                     -->
+        <!-- ====================================================================== -->
+        <section id="settings-reference">
+            <h2>Settings Reference</h2>
+            <p>This is a comprehensive guide to every setting available in Abracadabra (<code>Settings → Abracadabra</code>). Settings are organized into cards that match the plugin's UI.</p>
+            <div class="note"><p><strong>Tip:</strong> When you navigate from a plugin's settings to Abracadabra's settings, a "Back" button will appear at the top, allowing for seamless, one-click return navigation. No more getting lost in the settings maze!</p></div>
+
+            <h3>🎨 Component Layout & Order</h3>
+            <p>This card is the master control for the <a href="#customization">global default layout</a>. Use the up/down arrows to reorder components. For each component, you can set its default state (Expanded/Collapsed) and toggle whether it's enabled globally. The <a href="#ref-info-card">Info Card</a> cannot be disabled as it contains the control menu.</p>
+            <div class="note">
+                <p><strong>Power User Tip:</strong> You can drag the <strong>Plugin's Native Settings</strong> block itself! If you prefer to see a plugin's documentation before its settings, simply drag the Readme component above the Native Settings block.</p>
+            </div>
+
+            <h3>🔧 General Settings</h3>
+            <ul>
+                <li><strong>Add search bar to plugin settings:</strong> Injects a <a href="#bonus-features">search bar</a> into other plugins' settings pages, allowing you to instantly filter their native settings. (Default: <code>true</code>)</li>
+                <li><strong>Auto-save section states:</strong> If enabled, expanding or collapsing a component (e.g., the <a href="#ref-readme-viewer">Readme Viewer</a>) saves its state for that specific plugin. If disabled, you must use the "Pin" option in the <a href="#ref-controls-menu">control menu</a> to save states manually. (Default: <code>true</code>)</li>
+                <li><strong>Clear all per-plugin saved states:</strong> Wipes all your per-plugin layout and state overrides, reverting all plugins to the global defaults.</li>
+            </ul>
+
+            <h3>🪟 Abracadabra Window Settings</h3>
+            <p>Configure the default size and position of the Abracadabra <a href="#bonus-features">pop-out window</a> when opened for a plugin.</p>
+            <ul>
+                <li><strong>Default window position:</strong> Choose whether new pop-out windows appear on the <code>Left</code>, <code>Center</code>, or <code>Right</code> of your screen. (Default: <code>right</code>)</li>
+                <li><strong>Default window width (px):</strong> Sets the initial width for new pop-out windows. (Default: <code>500</code>)</li>
+                <li><strong>Default window height (px):</strong> Sets the initial height for new pop-out windows. (Default: <code>800</code>)</li>
+            </ul>
+
+            <h3>ℹ️ Info Card Settings</h3>
+            <ul>
+                <li><strong>Default Info Card state:</strong> Choose if the <a href="#ref-info-card">Info Card</a> is <code>Expanded</code> or <code>Collapsed</code> by default. (Default: <code>expanded</code>)</li>
+                <li><strong>GitHub Personal Access Token:</strong> Optional. Provide a token to increase the GitHub API rate limit, preventing <a href="#faq">errors</a> when checking many plugins for updates. The token only needs read access.</li>
+                <li><strong>Enable Plugin Version Check:</strong> Master switch for all update-checking functionality. (Default: <code>true</code>)</li>
+                <li><strong>Check for new versions on page load:</strong> If disabled, you must click the refresh icon to check for updates. (Default: <code>true</code>)</li>
+                <li><strong>"Update available" text color:</strong> Customize the color of the update notification text to match your theme.</li>
+                <li><strong>Action Button Toggles:</strong> Individual toggles to show or hide the "View on GitHub", "View Wiki", "View Documentation", and "Search on YouTube" buttons. (All default: <code>true</code>)</li>
+            </ul>
+
+            <h3>📖 Readme Viewer Settings</h3>
+            <ul>
+                <li><strong>Default inline Readme state:</strong> Choose if the <a href="#ref-readme-viewer">Readme Viewer</a> is <code>Expanded</code> or <code>Collapsed</code> by default. (Default: <code>collapsed</code>)</li>
+                <li><strong>Full height inline Readme:</strong> If enabled, the Readme grows to its full content height. (Default: <code>false</code>)</li>
+                <li><strong>Inline Readme max height (px):</strong> If "Full height" is off, this sets the scrollable height. (Default: <code>500</code>)</li>
+                <li><strong>Borderless Readme style:</strong> Toggles the container's background and border for a cleaner look. (Default: <code>true</code>)</li>
+                <li><strong>Default Readme base font size:</strong> Set the base font size (e.g., <code>1em</code>, <code>16px</code>). (Default: <code>1.05em</code>)</li>
+                <li><strong>Pre-load inline Readme:</strong> Loads Readme content immediately on opening a settings page. (Default: <code>true</code>)</li>
+                <li><strong>Cache Readmes:</strong> Caches loaded Readmes to improve performance and allow offline viewing. (Default: <code>true</code>)</li>
+            </ul>
+
+            <h3>⌨️ Commands & Hotkeys Settings</h3>
+            <ul>
+                <li><strong>Default "Commands & Hotkeys" state:</strong> Choose if the <a href="#ref-commands-list">Commands & Hotkeys</a> component is <code>Expanded</code> or <code>Collapsed</code>. (Default: <code>collapsed</code>)</li>
+                <li><strong>Collapse when empty:</strong> Automatically collapses the section if the plugin has no commands. (Default: <code>true</code>)</li>
+                <li><strong>Show command hotkeys:</strong> Toggles visibility of assigned hotkeys in the list. (Default: <code>true</code>)</li>
+                <li><strong>Show command IDs:</strong> Toggles visibility of internal command IDs for debugging. (Default: <code>false</code>)</li>
+                <li><strong>Hide commands by other plugins...:</strong> When enabled, the list defaults to showing only the plugin's own commands. (Default: <code>false</code>)</li>
+                <li><strong>Use max height for command list:</strong> If enabled, the list becomes scrollable if it exceeds the max height. (Default: <code>true</code>)</li>
+                <li><strong>Command list max height (px):</strong> Sets the scrollable height if the above setting is on. (Default: <code>400</code>)</li>
+            </ul>
+
+            <h3>📝 Plugin Notes Settings</h3>
+            <ul>
+                <li><strong>Default "Plugin Notes" state:</strong> Choose if the <a href="#ref-plugin-notes">Plugin Notes</a> component is <code>Expanded</code> or <code>Collapsed</code>. (Default: <code>collapsed</code>)</li>
+                <li><strong>Collapse notes section when empty:</strong> Automatically collapses the section if the note file is empty. (Default: <code>true</code>)</li>
+                <li><strong>Default notes area height (px):</strong> The initial height for the notes text area. (Default: <code>250</code>)</li>
+                <li><strong>Remember notes area height per plugin:</strong> If enabled, the height is saved for each plugin after you resize it. (Default: <code>true</code>)</li>
+                <li><strong>Notes storage path:</strong> The vault folder path for note files. (Default: <code>Abracadabra/notes/</code>)</li>
+                <li><strong>Show notes save path:</strong> Toggles visibility of the file path in the UI. (Default: <code>true</code>)</li>
+                <li><strong>Auto-save notes & delay:</strong> Master toggle and delay (in milliseconds) for the auto-save feature. (Default: <code>true</code>, <code>3000</code>ms)</li>
+            </ul>
+            
+            <h3>🎛️ Command Module Settings</h3>
+            <ul>
+                <li><strong>Default Command Module state:</strong> Choose if the <a href="#ref-command-module">Command Module</a> is <code>Expanded</code> or <code>Collapsed</code>. (Default: <code>collapsed</code>)</li>
+                <li><strong>Global Default Tile Color:</strong> The default background color for all tiles. (Default: <code>var(--background-modifier-hover)</code>)</li>
+                <li><strong>Global Default Text & Icon Color:</strong> The default color for tile text and icons. (Default: <code>#ffffff</code>)</li>
+            </ul>
+
+            <h3>🖥️ Console Logger Settings</h3>
+            <ul>
+                <li><strong>Default "Console Logger" state:</strong> Choose if the <a href="#ref-console-logger">Console Logger</a> is <code>Expanded</code> or <code>Collapsed</code>. (Default: <code>collapsed</code>)</li>
+            </ul>
+
+            <h3>✨ Extras & Dev Tools</h3>
+            <ul>
+                <li><strong>Show Plugin Picker in status bar:</strong> Adds a ✨ icon to the status bar to <a href="#bonus-features">quickly open Abracadabra</a> for any plugin. (Default: <code>true</code>)</li>
+                <li><strong>Sort plugin picker by frequency:</strong> Sorts the plugin picker list by most frequently opened. Starred plugins are always at the top. (Default: <code>true</code>)</li>
+                <li><strong>Show Abracadabra button in Installed Plugins list:</strong> Adds a shortcut to open Abracadabra from the main <a href="#bonus-features">Community Plugins list</a>. (Default: <code>true</code>)</li>
+                <li><strong>Display "Submit issue" button in installed plugins list:</strong> Adds another shortcut to the Community Plugins list for bug reporting. (Default: <code>false</code>)</li>
+                <li><strong>Enable full-length Theme Picker:</strong> Removes the item limit from the Theme Picker plugin, letting you <a href="#bonus-features">see all your themes</a>. (Default: <code>true</code>)</li>
+                <li><strong>Create "Open settings for..." and "Toggle" commands:</strong> Creates global commands to <a href="#bonus-features">jump to any plugin's settings page</a> or to enable/disable it. (Default: <code>true</code>)</li>
+                <li><strong>Enable Developer Menu:</strong> Shows the "Dev" menu in the <a href="#ref-info-card">Info Card</a>. You can then configure which specific actions (Reload, Open Folder, etc.) appear in this menu. (Default: <code>true</code>)</li>
+            </ul>
+
+            <h3>🗄️ Data Management</h3>
+            <p>This section allows you to configure cache durations for version and readme data, and provides buttons to manually clear these caches or refresh the community plugin list from GitHub. This is a crucial tool for troubleshooting and performance tuning.</p>
+            <ul>
+                <li><strong>Cache Durations:</strong> Configure the exact "use" and "keep" durations (in minutes) for both Readme and Version info caches.</li>
+                <li><strong>API Settings:</strong> Enable and configure an alternative API (from the Plugin Update Tracker plugin) for version checking to improve reliability and avoid <a href="#faq">GitHub rate limits</a>.</li>
+                <li><strong>Cache Clearing:</strong> One-click buttons to nuke the cache for Readmes, Release Info, or Wiki Statuses are essential for resolving stale data issues.</li>
+            </ul>
+        </section>
+
+        <!-- ====================================================================== -->
+        <!-- For Developers                                                         -->
+        <!-- ====================================================================== -->
+        <section id="for-developers">
+            <h2>For Developers & Themers</h2>
+            <p>Abracadabra is designed to foster a symbiotic relationship between developers and users. By making your plugin easier to understand and use, it increases adoption and user satisfaction.</p>
+            
+            <h3>Benefits for Developers</h3>
+            <ul>
+                <li><strong>Instant Visibility:</strong> Your documentation is front-and-center via the <a href="#ref-readme-viewer">Readme Viewer</a>, reducing user friction and support questions.</li>
+                <li><strong>Streamlined Feedback:</strong> The <a href="#ref-info-card">"Submit Issue" feature</a> with pre-filled debug info means higher quality, more actionable bug reports.</li>
+                <li><strong>Increased Support:</strong> Prominent, auto-detected <a href="#ref-info-card">funding links</a> connect you with users who want to support your work.</li>
+            </ul>
+
+            <h3>Making Your Plugin "Abracadabra-Friendly"</h3>
+            <p>To ensure the best experience, follow these simple guidelines for your plugin's manifest and README.</p>
+            <ul>
+                <li><strong><code>manifest.json</code>:</strong>
+                    <ul>
+                        
+                        <li>Include a primary funding URL: <code>"fundingUrl": "https://www.buymeacoffee.com/your-name"</code>. While Abracadabra also scans the README, the manifest is the most reliable source.</li>
+                        <li>Include a valid GitHub repo link: <code>"repo": "github-user/repo-name"</code>.</li>
+                    </ul>
+                </li>
+                <li><strong><code>README.md</code>:</strong>
+                    <ul>
+                        <li><strong>For a "<a href="#ref-info-card">Docs</a>" button:</strong> Include a clear Markdown link with "documentation", "docs," or "guide" in the link text. Example: <code>[View the Documentation](https://your-docs-site.com)</code>.</li>
+                        <li><strong>For a "<a href="#ref-info-card">Wiki</a>" button:</strong> Simply add a "Wiki" section to your GitHub repository. Abracadabra will detect it automatically.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Architectural Philosophy</h3>
+            <details>
+                <summary>► For those curious about the engineering...</summary>
+                <p>Abracadabra is built with performance and robust engineering in mind:</p>
+                <ul>
+                    <li><strong>Dynamic Injection:</strong> A <code>MutationObserver</code> ensures the UI is injected seamlessly without flickering.</li>
+                    <li><strong>Asynchronous Loading:</strong> Heavy operations are deferred until <code>onLayoutReady</code> to ensure Obsidian's startup remains fast.</li>
+                    <li><strong>Component-Based Architecture:</strong> A builder pattern manages the rendering of UI components based on global and per-plugin settings.</li>
+                    <li><strong>Resilient Update Engine:</strong> A multi-source system (Community List, Plugin Update Tracker API, and direct GitHub API) with retry logic and exponential backoff ensures reliability.</li>
+                    <li><strong>Custom Settings UI:</strong> The settings panel is built with raw DOM manipulation for a card-based, theme-aware user experience.</li>
+                    <li><strong>Advanced Data Handling:</strong> Features multi-layered caching (in-memory Maps and <code>data.json</code>), intelligent repository detection for all plugin types, and README pre-processing for rich media.</li>
+                    <li><strong>Console Patching:</strong> Safely patches the global <code>console</code> object to capture logs without interfering with the Developer Console.</li>
+                </ul>
+            </details>
+
+            <h3>CSS Customization</h3>
+            <p>All Abracadabra components are wrapped in containers with specific classes, prefixed with <code>pk-</code> or <code>abracadabra-</code>. Users or theme developers can use these classes to customize the appearance. Key CSS variables are also available for colors and fonts.</p>
+        </section>
+
+        <!-- ====================================================================== -->
+        <!-- Support & Mission                                                      -->
+        <!-- ====================================================================== -->
+        <section id="support-mission">
+            <h2>Support & Mission</h2>
+            
+            <h3>Support & Contributing</h3>
+            <p>I'm proud to have invested 150+ hours so for into crafting Abracadabra for the Obsidian community. If you find it helpful, please consider supporting its development by quite simply buying me a coffee!</p>
+            <div class="center-content">
+                <a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+            </div>
+
+            <h3>My Mission</h3>
+            <p>My ultimate mission is to save creatives and professionals precious time and cognitive power, to help you live up to your potential, and get incredible things done. Abracadabra for Obsidian is just one of the ways I'm working towards this: by helping to create a more vibrant and sustainable plugin ecosystem for the Obsidian community.</p>
+            <p>Abracadabra achieves this by giving users handy tools that facilitate learning, improve plugin adoption, reduce feature blindness, and offer a clearer channel for users to thank and support their favorite developers' hard and often underappreciated work.</p>
+            <p>Abracadabra is just one of my projects aimed at empowering the world to make amazing things happen. Stay tuned.</p>
+            <p style="text-align: right; width: 100%; max-width: 80ch;">- Th0rGarden</p>
+
+            <h3>Bug Reports & Feature Requests</h3>
+            <p>Please report any bugs or suggest new features by creating an issue on the <a href="https://github.com/Th0rGarden/Abracadabra/issues" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about Abracadabra's features, behavior, and troubleshooting.</p>
+            <hr>
+
+            <h3>Troubleshooting & Errors</h3>
+            
+            <details>
+                <summary><strong>Q: The "Update" button failed or is not appearing. What do I do?</strong></summary>
+                <p>This can happen for a few reasons:</p>
+                <ul>
+                    <li><strong>Network Issues:</strong> The most common cause. Abracadabra needs an internet connection to check GitHub for updates. Check your connection and try clicking the refresh icon (🔄) in the <a href="#ref-info-card">Info Card</a>.</li>
+                    <li><strong>GitHub Rate Limits:</strong> If you check many plugins quickly, you might hit GitHub's API rate limit. The error message will usually mention this. The best solution is to add a <a href="#settings-reference">GitHub Personal Access Token</a> in Abracadabra's "Info Card" settings. This significantly increases your limit.</li>
+                    <li><strong>API Issues:</strong> Abracadabra uses an external API for more reliable version checking. If this API is down, it may affect update checks. This is usually temporary.</li>
+                    <li><strong>No Repository Link:</strong> If a plugin's developer hasn't included a repository link in their <code>manifest.json</code>, Abracadabra cannot find where to check for updates. This is common for very new or unlisted plugins.</li>
+                    <li><strong>Cache Issues:</strong> In rare cases, the version cache might be stale. Go to <code><a href="#settings-reference">Settings → Abracadabra → Data Management</a></code> and click "Clear all release info cache," then return to the plugin's page and refresh.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary><strong>Q: The Readme isn't loading or looks strange.</strong></summary>
+                <p>Here's how to troubleshoot a problematic <a href="#ref-readme-viewer">Readme</a>:</p>
+                <ul>
+                    <li><strong>Offline:</strong> If you're offline, Abracadabra will try to load a cached version or a local file. If neither exists, it can't load.</li>
+                    <li><strong>Unusual File Name:</strong> Abracadabra looks for <code>README.md</code> or <code>readme.md</code>. If the developer used a different name, it won't be found.</li>
+                    <li><strong>Private Repository:</strong> The plugin cannot access documentation from private GitHub repositories.</li>
+                    <li><strong>Force Refresh:</strong> Click the refresh icon (🔄) in the Readme Viewer's header to force a fresh download from GitHub, which often resolves temporary network glitches.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary><strong>Q: Why isn't the "Docs" or "Wiki" button showing up for a plugin?</strong></summary>
+                <p>These buttons are smart and only appear when they have something to link to.
+                    <ul>
+                        <li>The <strong>Docs</strong> button appears if Abracadabra finds a link with keywords like "documentation," "docs," or "guide" in the plugin's <a href="#ref-readme-viewer">README file</a>.</li>
+                        <li>The <strong>Wiki</strong> button appears only if the developer has enabled the "Wiki" feature on their GitHub repository.</li>
+                    </ul>
+                If a button is missing, it means the resource likely doesn't exist or isn't linked in a way the plugin can detect.
+                </p>
+            </details>
+
+            <h3>Functionality & Behavior</h3>
+
+            <details>
+                <summary><strong>Q: How do I reset the layout for just one plugin?</strong></summary>
+                <p>Easy! Go to the settings page for the plugin you want to reset. In the <a href="#ref-info-card">Info Card</a> header, click the <a href="#ref-controls-menu"><code>Abracadabra ˅</code> control menu</a> and select "Reset Plugin Layout". This will remove all per-plugin overrides (visibility, order, and pinned states) and revert it to your <a href="#settings-reference">global default settings</a>.</p>
+            </details>
+
+            <details>
+                <summary><strong>Q: Why is a plugin marked as "(Sideloaded)" or "(BRAT)"?</strong></summary>
+                <p>These indicators give you quick context about how a plugin was installed.</p>
+                <ul>
+                    <li><strong>(BRAT):</strong> The plugin was installed using the <a href="#installation">BRAT</a> (Beta Reviewer's Auto-update Tool). Abracadabra will use GitHub directly for updates.</li>
+                    <li><strong>(Sideloaded):</strong> The plugin is not found in the official community plugin list and is not recognized as a BRAT install. This is normal for plugins you are developing locally or have installed by manually placing them in your vault's <code>.obsidian/plugins</code> folder.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary><strong>Q: Can I search for commands outside of a plugin's settings page?</strong></summary>
+                <p>While the <em>visual list</em> of commands is part of the Command Deck, you can always use Obsidian's built-in Command Palette (<code>Ctrl/Cmd + P</code>) to search for and run any command from any plugin at any time. Abracadabra's <a href="#ref-commands-list">"Commands & Hotkeys" component</a> is designed for discovery, learning, and testing commands in context.</p>
+            </details>
+
+            <details>
+                <summary><strong>Q: Where are my "Plugin Notes" stored? Can I access them elsewhere?</strong></summary>
+                <p>Yes! Your <a href="#ref-plugin-notes">notes</a> are just standard Markdown files stored inside your vault. You can find the exact folder path in <code><a href="#settings-reference">Settings → Abracadabra → Plugin Notes Settings → Notes storage path</a></code>. Because they are regular notes, you can link to them, search for them using Obsidian's global search, and even query them with Dataview, just like any other file in your vault.</p>
+            </details>
+
+            <h3>Bugs & Support</h3>
+
+            <details>
+                <summary><strong>Q: How do I report a bug for a different plugin using Abracadabra?</strong></summary>
+                <p>Abracadabra makes this easy and helps developers immensely.
+                <ol>
+                    <li>Go to the settings page of the plugin with the bug.</li>
+                    <li>In the <a href="#ref-info-card">Info Card</a>, click the <strong>"Submit Issue" (🐛)</strong> button. This opens a new GitHub issue and pre-fills it with essential system information.</li>
+                    <li>If the developer asks for logs, enable the <strong><a href="#ref-console-logger">Console Logger</a></strong> component, reproduce the bug, and then click the <strong>"<a href="#ref-info-card">Copy Console Logs</a>" (📋)</strong> button in the Info Card. Paste this into your GitHub issue.</li>
+                </ol>
+                </p>
+            </details>
+
+            <details>
+                <summary><strong>Q: How do I report a bug for Abracadabra itself?</strong></summary>
+                <p>We appreciate it! The best way is to use Abracadabra on itself. Go to <code><a href="#settings-reference">Settings → Abracadabra</a></code> and use the “Submit Issue” button in its own Info Card. This gives us the same high-quality debug information we help you provide to other developers!</p>
+            </details>
+
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('#main-nav a');
+            const sections = document.querySelectorAll('#main-content section');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+
+            function showSection(targetId) {
+                sections.forEach(section => section.classList.remove('active-section'));
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active-section');
+                }
+
+                navLinks.forEach(link => link.classList.remove('active'));
+                const activeLink = document.querySelector(`#main-nav a[href="#${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+                document.getElementById('main-content').scrollTop = 0;
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    history.pushState(null, null, '#' + targetId);
+                    showSection(targetId);
+                    if (document.body.classList.contains('menu-open')) {
+                        document.body.classList.remove('menu-open');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            function handleInitialLoad() {
+                const initialHash = window.location.hash.substring(1);
+                const initialSectionId = initialHash || (sections.length > 0 ? sections[0].id : null);
+                if (initialSectionId) {
+                    showSection(initialSectionId);
+                }
+            }
+            handleInitialLoad();
+
+            window.addEventListener('popstate', handleInitialLoad);
+
+            mobileMenuToggle.addEventListener('click', () => {
+                const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                document.body.classList.toggle('menu-open');
+            });
+
+            const allCodeBlocks = document.querySelectorAll('pre');
+            allCodeBlocks.forEach(block => {
+                const code = block.querySelector('code');
+                if (!code) return;
+                const copyButton = document.createElement('button');
+                copyButton.className = 'copy-btn';
+                copyButton.textContent = 'Copy';
+                block.appendChild(copyButton);
+                copyButton.addEventListener('click', () => {
+                    navigator.clipboard.writeText(code.innerText).then(() => {
+                        copyButton.textContent = 'Copied!';
+                        setTimeout(() => { copyButton.textContent = 'Copy'; }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                        copyButton.textContent = 'Error';
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
