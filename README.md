@@ -1,19 +1,14 @@
-# Abracadabra 
-## for Obsidian Plugins
+<h1 align="center"><span style="text-decoration:underline;">Abracadabra</span> for Obsidian</h1>
 
 <p align="center">  
-<img src="https://raw.githubusercontent.com/Th0rGarden/PluginSidekick/main/assets/pk-logo-banner.png" alt="Abracadabra Banner" width="700">  
-</p>  
-
-<p align="center">  
-Master and command your Obsidian plugins.  
+<strong>Master and command your Obsidian plugins.  </strong>
 <br><br>  
 Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, the secrets are revealed: every command, every note, every hidden feature—summoned into one unified, dynamic control deck.  
 <br><br>  
 No more context switching. No more feature blindness. <strong>Just pure, focused power—finally in your hands.</strong>  
 </p>  
 
-![image](https://github.com/user-attachments/assets/b0ae50bc-6bb2-4b52-917a-a201fd7c9e37)
+![image](https://github.com/user-attachments/assets/54b0af83-966b-4216-8e68-810c601f13a5)
 
 <p align="center">  
 <a href="https://github.com/Th0rGarden/Abracadabra/releases/latest">  
@@ -40,7 +35,7 @@ Creating and maintaining free plugins is time consuming. If you can afford it, p
 
 Abracadabra is a **management console** that fundamentally redefines your relationship with the Obsidian plugin ecosystem.
 
-**😵‍💫 The Problem:** The potential of many plugins is latent, locked away behind fragmented interfaces. Documentation lives on GitHub, commands in the palette, hotkeys buried in settings. This forces constant context switching and leads to "feature blindness"—where you only use a fraction of a plugin's true power.
+**😵‍💫 The Problem:** The potential of many plugins is locked away behind fragmented interfaces. Documentation lives on GitHub, commands in the palette, hotkeys buried in settings. This forces constant context switching and leads to "feature blindness"—where you only use a fraction of a plugin's true power.
 
 **🪄 The Solution:** Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic command deck for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://th0rgarden.github.io/abracadabra-for-obsidian/#core-concepts) in our documentation.
 
