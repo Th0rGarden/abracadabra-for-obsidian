@@ -4,14 +4,15 @@
  <strong>🪄 Master and command your Obsidian plugins. </strong>
 </p>
 
-<p  align="center"  >
-     <br/>
-🗣️<i>"The first thing I do when I install a new plugin now is pop open its Abracadabra window."</i><br/>
-     <br/>...
+<p  align="center"  ></br/>
+ ★ ★ ★ ★ ★
+     <br/><br/>
+🗣️<i>"The first thing I do when I install a new plugin now is pop open its Abracadabra window."</i><br/><br/>
+     ★ ★ ★ ★ ★<br/>
 </p>
-
+<br/>
 <p align="center"  >
-Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, the secrets are revealed: every command, every note, every hidden feature—summoned into one unified, dynamic control deck.  
+Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, every command, every note, every hidden feature is summoned at your fingertips into one unified, dynamic control deck.  
 </p>
 
 <p align="center"  >
@@ -42,12 +43,14 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 
 
 <h2>Supporting Developers!</h2>
-<p align="center"><br>  
-One of the core reasons this plugin exists is to make it easier for users to support plugin developers, and to lighten the load of providing support back to users. Creating, maintaining, and addressing questions for free software is time consuming, and practically impossible for many. This is why I included a "Donate" button in the info card for every developer who adds their funding links in the plugin's manifest or readme files. Donating to developers helps the Obsidian ecosystem thrive. Every little bit helps.<br><br>  
-<a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>  
+<p>
+One of the most important reasons this plugin exists is to make it easier for users to support plugin developers, and to lighten the load of providing support back to users.<br/><br/> Creating, maintaining, as well as addressing user questions all for free software is time consuming, and practically impossible for many. <br/><br/>This is why Abracadabra features a "Donate" button in the info card for every developer who adds their funding links in the plugin's manifest or readme files.<br/><br/> Donating to developers helps the Obsidian ecosystem thrive.<br/><br/> Every little bit helps!<br><br>  
+<a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: auto; width: 150px !important;" ></a>  
 </p>  
 
 ---
+
+<br>
 
 ## What is Abracadabra?
 
@@ -56,6 +59,14 @@ Abracadabra is a **management console** that fundamentally redefines your relati
 **😵‍💫 The Problem:** The potential of many plugins is locked away behind fragmented interfaces. Documentation lives on GitHub, commands in the palette, hotkeys buried in settings. This forces constant context switching and leads to "feature blindness"—where you only use a fraction of a plugin's true power.
 
 **🪄 The Solution:** Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic command deck for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://th0rgarden.github.io/abracadabra-for-obsidian/#core-concepts) in our documentation.
+
+## Three Views
+
+- <strong>Inline View:</strong> Integrates directly into any plugin's settings page.
+- <strong>Pop-out Window:</strong> A floating, draggable, and resizable window for parallel work.
+- <strong>Dedicated View:</strong> A full-pane view you can place anywhere in your workspace.
+
+<br>
 
 ## Key Features: Your Modular Command Deck
 
@@ -73,6 +84,7 @@ Each component of the Command Deck is a powerful tool on its own. For a complete
     
 - **🖥️ Console Logger**: A live, in-app debugging tool. Captures and filters console messages by source plugin, with one-click copy for easy bug reporting. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-console-logger))
     
+<br>
 
 ## Bonus Upgrades
 
@@ -84,6 +96,7 @@ Abracadabra also enhances your entire Obsidian experience. Discover all the [**B
     
 - **⚡Open settings for any plugin:** Adds a global command to "Open settings for another plugin...".
     
+<br>
 
 ## Workflows Transformed
 
