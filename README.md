@@ -110,7 +110,7 @@ Here's a real-world example of how Abracadabra can change the game.
 >
 > After I've figured out the key actions I'll be using regularly, I build out a custom command module. I'll add things like 'Archive Tasks' and 'Task Report' and give them custom icons and colors. With this I get a visual app that's tailored to my specific needs.
 >
-> And of course, the info card is great for keeping up with updates; I don't have auto-update plugins enabled in Obsidian because I like to control over my versions. When a beta release is available, I'll click the release notes button to see what's new, and I can update with one click.
+> And of course, the info card is great for keeping up with updates; I don't have auto-update plugins enabled in Obsidian because I like control over my versions. When a beta release is available, I'll click the release notes button to see what's new, and I can update with one click.
 
 > **📖 See More Examples**  
 > This is just one example. Read more about how [**focused writers, new explorers, and plugin developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#use-cases) can use Abracadabra in the full documentation.
