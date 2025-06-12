@@ -77,12 +77,11 @@ Abracadabra also enhances your entire Obsidian experience. Discover all the [**B
 ## Workflows Transformed
 
 Here's a real-world (albeing fictional) example of how Abracadabra can change the game.
+    "I love trying new plugins, but I can never remember all the commands or find the documentation when I need it. I feel like I'm only using 10% of my tools."
 
-> "I love trying new plugins, but I can never remember all the commands or find the documentation when I need it. I feel like I'm only using 10% of my tools."
+Whenever I install a new plugin, the first thing I do is pop open its Abracadabra window. It docks to the side of my screen, which lets me read the setup guide while I'm actually configuring the settings in the main window. It's like having a dedicated monitor just for the docs. Once I have a basic understanding, I'll scan the commands and hotkeys list. This is where I see what the plugin *really* does. I can run commands directly from the list to test them out before I commit to a hotkey.
 
-My process for tackling a new plugin is always the same now. Whenever I install something complex, like 'Task Archiver Pro', the first thing I do is open its settings and immediately pop out the readme viewer into a **fully draggable and resizable window**. I dock it to the side of my screen, which lets me read the setup guide while I'm actually configuring the settings in the main window. It's like having a dedicated monitor just for the docs. Once I have a basic understanding, I'll scan the commands and hotkeys list. This is where I see what the plugin really does. I can run commands directly from the list to test them out before I commit to a hotkey.
-
-After I've figured out the key actions I'll be using regularly, I build myself a custom interface with the command module. I'll click 'Edit' and create a grid with buttons for 'Archive Tasks' and 'Task Report', giving them custom icons and colors. It turns a complex plugin into a simple, visual app that's tailored to my specific needs.
+After I've figured out the key actions I'll be using regularly, I build out a custom command module. I'll add things like 'Archive Tasks' and 'Task Report' and give them custom icons and colors. With this I get a visual app that's tailored to my specific needs. And of course, the info card is great for keeping things up to date; I don't have auto-update plugins enabled in Obsidian because I like to control which versions I install. But sometimes if I see a new beta is available, I'll click the release notes button to see what's new, and I can update with one click.
 
 > **📖 See More Examples**  
 > This is just one example. Read more about how [**focused writers, new explorers, and plugin developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#use-cases) can use Abracadabra in the full documentation.
