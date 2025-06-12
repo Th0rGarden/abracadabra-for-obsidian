@@ -13,6 +13,8 @@ Why should managing plugins feel like deciphering ancient scrolls? With Abracada
 No more context switching. No more feature blindness. <strong>Just pure, focused power—finally in your hands.</strong>  
 </p>  
 
+![image](https://github.com/user-attachments/assets/b0ae50bc-6bb2-4b52-917a-a201fd7c9e37)
+
 <p align="center">  
 <a href="https://github.com/Th0rGarden/Abracadabra/releases/latest">  
 <img src="https://img.shields.io/github/v/release/Th0rGarden/Abracadabra?style=for-the-badge&color=blueviolet" alt="Latest Release">  
