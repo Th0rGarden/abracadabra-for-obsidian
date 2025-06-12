@@ -9,23 +9,32 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 </p>  
 <br/>
 
-![image](https://github.com/user-attachments/assets/54b0af83-966b-4216-8e68-810c601f13a5)
-
 <p align="center">  
 <a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
 <img src="https://img.shields.io/github/v/release/Th0rGarden/abracadabra-for-obsidian?style=for-the-badge&color=blueviolet" alt="Latest Release">  
-</a>  
-<a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
+</a><a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
 <img src="https://img.shields.io/github/downloads/Th0rGarden/abracadabra-for-obsidian/total?style=for-the-badge&color=blueviolet" alt="Total Downloads">  
 </a>  
 </p>  
-<p align="center"><br>  
-Creating and maintaining free plugins is time consuming. If you can afford it, please support development. Every little bit helps.<br><br>  
-<a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>  
-</p>  
+
+<br/>
 
 > **📖 Looking for the full guide?**  
 > This README is a brief overview. For a complete, searchable guide with real-world use cases and deep-dives into every feature, **[visit the official documentation site](https://th0rgarden.github.io/abracadabra-for-obsidian/)**.
+
+<hr>
+
+#### Find Abracadabra in your plugin settings or pop it out in a draggable, reizable modal and build a custom colorful command module:
+
+<br/>
+
+![image](https://github.com/user-attachments/assets/54b0af83-966b-4216-8e68-810c601f13a5)
+
+
+<p align="center"><br>  
+Once of the core reasons this plugin was created was to make it easier for users to support plugin developers and relieve part of the burden of providing support. Creating, maintaining, and addressing questions for free software is time consuming, and practically impossible for many. This is why I included a "Donate" button in the info card for every developer who adds their funding links in the plugin's manifest or readme files. Donating to developers helps the Obsidian ecosystem thrive. Every little bit helps.<br><br>  
+<a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>  
+</p>  
 
 ---
 
