@@ -102,7 +102,7 @@ Abracadabra also enhances your entire Obsidian experience. Discover all the [**B
 
 ## Workflows Transformed
 
-Here's a real-world (albeit fictional) example of how Abracadabra can change the game.
+Here's a real-world example of how Abracadabra can change the game.
 
 > The first thing I do when I install a new plugin now is pop open its Abracadabra window. It docks to the side of my screen, which lets me read the setup guide while I'm actually configuring the settings in the main window.
 >
