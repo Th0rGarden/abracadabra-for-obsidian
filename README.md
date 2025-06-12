@@ -116,6 +116,7 @@ Here's a real-world example of how Abracadabra can change the game.
 > This is just one example. Read more about how [**focused writers, new explorers, and plugin developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#use-cases) can use Abracadabra in the full documentation.
 
 <br/>
+
 ## 📦 Installation
 
 ### Using BRAT (Recommended)
@@ -124,11 +125,8 @@ Here's a real-world example of how Abracadabra can change the game.
     
 2. Open the command palette (Ctrl/Cmd + P) and run the command BRAT: Add a beta plugin for testing.
     
-3. Paste Thacadabra into the prompt and click "Add Plugin".
+3. Paste `https://github.com/Th0rGarden/abracadabra-for-obsidian` into the prompt, select "Latest version," and click "Add Plugin".
     
-4. Enable "Abracadabra" in the **Community plugins** tab in your settings.
-    
-
 💡 **Having trouble?** For more detailed instructions or troubleshooting tips, please refer to the [**full Installation guide**](https://th0rgarden.github.io/abracadabra-for-obsidian/#installation) in our documentation.
 
 ---
