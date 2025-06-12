@@ -13,13 +13,13 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 
 <p align="center">  
 <a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
-<img src="https://img.shields.io/github/v/release/Th0rGarden/Abracadabra?style=for-the-badge&color=blueviolet" alt="Latest Release">  
+<img src="https://img.shields.io/github/v/release/Th0rGarden/abracadabra-for-obsidian?style=for-the-badge&color=blueviolet" alt="Latest Release">  
 </a>  
 <a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
-<img src="https://img.shields.io/github/downloads/Th0rGarden/Abracadabra/total?style=for-the-badge&color=blueviolet" alt="Total Downloads">  
+<img src="https://img.shields.io/github/downloads/Th0rGarden/abracadabra-for-obsidian/total?style=for-the-badge&color=blueviolet" alt="Total Downloads">  
 </a>  
 <a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/blob/main/LICENSE">  
-<img src="https://img.shields.io/github/license/Th0rGarden/Abracadabra?style=for-the-badge" alt="License">  
+<img src="https://img.shields.io/github/license/Th0rGarden/abracadabra-for-obsidian?style=for-the-badge" alt="License">  
 </a>  
 </p>  
 <p align="center"><br>  
@@ -91,7 +91,7 @@ After I've figured out the key actions I'll be using regularly, I build myself a
     
 2. Open the command palette (Ctrl/Cmd + P) and run the command BRAT: Add a beta plugin for testing.
     
-3. Paste Th0rGarden/Abracadabra into the prompt and click "Add Plugin".
+3. Paste Thacadabra into the prompt and click "Add Plugin".
     
 4. Enable "Abracadabra" in the **Community plugins** tab in your settings.
     
