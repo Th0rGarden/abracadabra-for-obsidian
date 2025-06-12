@@ -18,7 +18,7 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 <a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
 <img src="https://img.shields.io/github/downloads/Th0rGarden/abracadabra-for-obsidian/total?style=for-the-badge&color=blueviolet" alt="Total Downloads">  
 </a>  
-<a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/blob/main/LICENSE">  
+<a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/blob/main/LICENSE.md">  
 <img src="https://img.shields.io/github/license/Th0rGarden/abracadabra-for-obsidian?style=for-the-badge" alt="License">  
 </a>  
 </p>  
@@ -70,9 +70,7 @@ Abracadabra also enhances your entire Obsidian experience. Discover all the [**B
 
 ## Workflows Transformed
 
-Here's a real-world example of how Abracadabra changes the game.
-
-### For the Plugin Power User
+Here's a real-world (albeing fictional) example of how Abracadabra can change the game.
 
 > "I love trying new plugins, but I can never remember all the commands or find the documentation when I need it. I feel like I'm only using 10% of my tools."
 
@@ -81,13 +79,13 @@ My process for tackling a new plugin is always the same now. Whenever I install 
 After I've figured out the key actions I'll be using regularly, I build myself a custom interface with the command module. I'll click 'Edit' and create a grid with buttons for 'Archive Tasks' and 'Task Report', giving them custom icons and colors. It turns a complex plugin into a simple, visual app that's tailored to my specific needs.
 
 > **📖 See More Examples**  
-> This is just one story. Read more about how [**focused writers, new explorers, and plugin developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#use-cases) use Abracadabra in the full documentation.
+> This is just one example. Read more about how [**focused writers, new explorers, and plugin developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#use-cases) can use Abracadabra in the full documentation.
 
 ## 📦 Installation
 
 ### Using BRAT (Recommended)
 
-1. Install the [BRAT](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2FTfTHacker%2Fobsidian42-brat) plugin from the Community Plugins browser.
+1. Install the [BRAT](https://github.com/TfTHacker/obsidian42-brat) plugin from the Community Plugins browser.
     
 2. Open the command palette (Ctrl/Cmd + P) and run the command BRAT: Add a beta plugin for testing.
     
@@ -183,10 +181,10 @@ I'm proud to have invested 150+ hours so for into crafting Abracadabra for the O
 </p>  
 ### Bug Reports & Feature Requests  
 
-Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2FTh0rGarden%2FAbracadabra%2Fissues). Before submitting, you may want to check the [bug reporting guide](https://th0rgarden.github.io/abracadabra-for-obsidian/#faq) in our docs for tips on creating the most effective reports. Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
+Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://github.com/Th0rGarden/abracadabra-for-obsidian/issues). Before submitting, you may want to check the [bug reporting guide](https://th0rgarden.github.io/abracadabra-for-obsidian/#faq) in our docs for tips on creating the most effective reports. Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
 
 ---
 
 ## License
 
-Abracadabra is released under the MIT License. See the [LICENSE](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2FTh0rGarden%2FAbracadabra%2Fblob%2Fmain%2FLICENSE) file for more details. SVG icons used are from [Lucide](https://www.google.com/url?sa=E&q=https%3A%2F%2Flucide.dev) (ISC License).
+Abracadabra is released under the terms of the End-User License Agreement (EULA). All rights are reserved. By installing and using this plugin, you agree to the terms specified in the [LICENSE](https://github.com/Th0rGarden/Abracadabra/blob/main/LICENSE.md) file.
