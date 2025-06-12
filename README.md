@@ -1,10 +1,20 @@
 <h1 align="center"><span style="text-decoration:underline;">Abracadabra</span> for Obsidian</h1>
 
-<p align="center"  
-<strong>🪄 Master and command your Obsidian plugins.  </strong>
-<br><br>  
+<p align="center"  >
+ <strong>🪄 Master and command your Obsidian plugins. </strong>
+</p>
+
+<p  align="center"  >
+     <br/>
+🗣️<i>"The first thing I do when I install a new plugin now is pop open its Abracadabra window."</i><br/>
+     <br/>...
+</p>
+
+<p align="center"  >
 Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, the secrets are revealed: every command, every note, every hidden feature—summoned into one unified, dynamic control deck.  
-<br><br>  
+</p>
+
+<p align="center"  >
 No more context switching. No more feature blindness. <strong>Just pure, focused power—finally in your hands.</strong>  
 </p>  
 <br/>
@@ -31,6 +41,7 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 ![image](https://github.com/user-attachments/assets/54b0af83-966b-4216-8e68-810c601f13a5)
 
 
+<h2>Supporting Developers!</h2>
 <p align="center"><br>  
 One of the core reasons this plugin exists is to make it easier for users to support plugin developers, and to lighten the load of providing support back to users. Creating, maintaining, and addressing questions for free software is time consuming, and practically impossible for many. This is why I included a "Donate" button in the info card for every developer who adds their funding links in the plugin's manifest or readme files. Donating to developers helps the Obsidian ecosystem thrive. Every little bit helps.<br><br>  
 <a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>  
@@ -78,7 +89,10 @@ Abracadabra also enhances your entire Obsidian experience. Discover all the [**B
 
 Here's a real-world (albeit fictional) example of how Abracadabra can change the game.
 
-> Whenever I install a new plugin, the first thing I do is pop open its Abracadabra window. It docks to the side of my screen, which lets me read the setup guide while I'm actually configuring the settings in the main window. It's like having a dedicated monitor just for the docs. Once I have a basic understanding, I'll scan the commands and hotkeys list. This is where I see what the plugin *really* does. I can run commands directly from the list to test them out before I commit to a hotkey.
+> The first thing I do when I install a new plugin now is pop open its Abracadabra window. It docks to the side of my screen, which lets me read the setup guide while I'm actually configuring the settings in the main window.
+>
+> Once I have a basic understanding, I'll scan the commands and hotkeys list. This is where I see what the plugin *really* does. I can run commands directly from the list to test them out before I commit to a hotkey.
+>
 > After I've figured out the key actions I'll be using regularly, I build out a custom command module. I'll add things like 'Archive Tasks' and 'Task Report' and give them custom icons and colors. With this I get a visual app that's tailored to my specific needs. And of course, the info card is great for keeping things up to date; I don't have auto-update plugins enabled in Obsidian because I like to control which versions I install. But sometimes if I see a new beta is available, I'll click the release notes button to see what's new, and I can update with one click.
 
 > **📖 See More Examples**  
