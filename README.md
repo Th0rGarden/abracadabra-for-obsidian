@@ -189,7 +189,7 @@ I'm proud to have invested 150+ hours so for into crafting Abracadabra for the O
 
 ### Bug Reports & Feature Requests  
 
-Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://github.com/Th0rGarden/abracadabra-for-obsidian/issues). Before submitting, you may want to check the [bug reporting guide](https://th0rgarden.github.io/abracadabra-for-obsidian/#faq) in our docs for tips on creating the most effective reports. Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
+Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://github.com/Th0rGarden/abracadabra-for-obsidian/issues). Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
 
 ---
 
