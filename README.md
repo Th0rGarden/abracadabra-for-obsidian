@@ -48,8 +48,6 @@ One of the most important reasons this plugin exists is to make it easier for us
 <a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: auto; width: 150px !important;" ></a>  
 </p>  
 
----
-
 <br>
 
 ## What is Abracadabra?
@@ -111,6 +109,7 @@ Here's a real-world (albeit fictional) example of how Abracadabra can change the
 > **📖 See More Examples**  
 > This is just one example. Read more about how [**focused writers, new explorers, and plugin developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#use-cases) can use Abracadabra in the full documentation.
 
+<br/>
 ## 📦 Installation
 
 ### Using BRAT (Recommended)
@@ -128,6 +127,7 @@ Here's a real-world (albeit fictional) example of how Abracadabra can change the
 
 ---
 
+<br/>
 ## Brief Settings Guide
 
 This is a quick summary; for a complete breakdown of every single option, please consult the exhaustive [**Settings Reference**](https://th0rgarden.github.io/abracadabra-for-obsidian/#settings-reference) in the official docs.
@@ -186,6 +186,7 @@ This covers the most common questions. For an even more comprehensive list, incl
 
 ---
 
+<br/>
 ## For Developers & Themers
 
 Abracadabra is designed to foster a symbiotic relationship between developers and users. By making your plugin easier to understand and use, it increases adoption, user satisfaction, and support. For a deep dive into the plugin's architecture and CSS customization, check out the [**For Developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#for-developers) section of the docs.
@@ -195,6 +196,7 @@ Abracadabra is designed to foster a symbiotic relationship between developers an
 
 ---
 
+<br/>
 ## My Mission
 
 My ultimate mission is to save creatives and professionals precious time and cognitive power, to help you live up to your potential, and get incredible things done. Abracadabra for Obsidian is just one of the ways I'm working towards this: by helping to create a more vibrant and sustainable plugin ecosystem for the Obsidian community.
@@ -203,6 +205,7 @@ Abracadabra achieves this by giving users handy tools that facilitate learning, 
 
 Abracadabra is just one of my projects aimed at empowering the world to make amazing things happen. Stay tuned.
 
+<br/>
 ## ❤️ Support
 
 I'm proud to have invested 150+ hours so for into crafting Abracadabra for the Obsidian community. If you find it helpful, please consider supporting its development by quite simply buying me a coffee!
@@ -211,12 +214,14 @@ I'm proud to have invested 150+ hours so for into crafting Abracadabra for the O
 <a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>  
 </p>  
 
+<br/>
 ### Bug Reports & Feature Requests  
 
 Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://github.com/Th0rGarden/abracadabra-for-obsidian/issues). Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
 
 ---
 
+<br/>
 ## License
 
 Abracadabra is released under the terms of the End-User License Agreement (EULA). All rights are reserved. By installing and using this plugin, you agree to the terms specified in the [LICENSE](https://github.com/Th0rGarden/abracadabra-for-obsidian/blob/main/LICENSE.md) file.
