@@ -24,7 +24,7 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 
 <hr>
 
-#### Find Abracadabra in your plugin settings or pop it out in a draggable, reizable modal and build a custom colorful command module:
+#### Find Abracadabra in your plugin settings, pop it out in a resizable modal, and start building a custom command module:
 
 <br/>
 
