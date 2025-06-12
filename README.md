@@ -1,7 +1,7 @@
 <h1 align="center"><span style="text-decoration:underline;">Abracadabra</span> for Obsidian</h1>
 
 <p align="center">  
-<strong>Master and command your Obsidian plugins.  </strong>
+<strong>🪄 Master and command your Obsidian plugins.  </strong>
 <br><br>  
 Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, the secrets are revealed: every command, every note, every hidden feature—summoned into one unified, dynamic control deck.  
 <br><br>  
