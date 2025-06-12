@@ -54,9 +54,11 @@ One of the most important reasons this plugin exists is to make it easier for us
 
 Abracadabra is a **management console** that fundamentally redefines your relationship with the Obsidian plugin ecosystem.
 
-**😵‍💫 The Problem:** The potential of many plugins is locked away behind fragmented interfaces. Documentation lives on GitHub, commands in the palette, hotkeys buried in settings. This forces constant context switching and leads to "feature blindness"—where you only use a fraction of a plugin's true power.
+### 😵‍💫 The Problem
+The potential of many plugins is locked away behind fragmented interfaces. Documentation lives on GitHub, commands in the palette, hotkeys buried in settings. This forces constant context switching and leads to "feature blindness"—where you only use a fraction of a plugin's true power.
 
-**🪄 The Solution:** Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic command deck for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://th0rgarden.github.io/abracadabra-for-obsidian/#core-concepts) in our documentation.
+### 🪄 The Solution
+Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic command deck for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://th0rgarden.github.io/abracadabra-for-obsidian/#core-concepts) in our documentation.
 
 ## Three Views
 
