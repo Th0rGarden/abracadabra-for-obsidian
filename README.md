@@ -1,23 +1,24 @@
 <h1 align="center"><span style="text-decoration:underline;">Abracadabra</span> for Obsidian</h1>
 
-<p align="center">  
+<p align="center"  
 <strong>🪄 Master and command your Obsidian plugins.  </strong>
 <br><br>  
 Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, the secrets are revealed: every command, every note, every hidden feature—summoned into one unified, dynamic control deck.  
 <br><br>  
 No more context switching. No more feature blindness. <strong>Just pure, focused power—finally in your hands.</strong>  
 </p>  
+<br/>
 
 ![image](https://github.com/user-attachments/assets/54b0af83-966b-4216-8e68-810c601f13a5)
 
 <p align="center">  
-<a href="https://github.com/Th0rGarden/Abracadabra/releases/latest">  
+<a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
 <img src="https://img.shields.io/github/v/release/Th0rGarden/Abracadabra?style=for-the-badge&color=blueviolet" alt="Latest Release">  
 </a>  
-<a href="https://github.com/Th0rGarden/Abracadabra/releases/latest">  
+<a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
 <img src="https://img.shields.io/github/downloads/Th0rGarden/Abracadabra/total?style=for-the-badge&color=blueviolet" alt="Total Downloads">  
 </a>  
-<a href="https://github.com/Th0rGarden/Abracadabra/blob/main/LICENSE">  
+<a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/blob/main/LICENSE">  
 <img src="https://img.shields.io/github/license/Th0rGarden/Abracadabra?style=for-the-badge" alt="License">  
 </a>  
 </p>  
