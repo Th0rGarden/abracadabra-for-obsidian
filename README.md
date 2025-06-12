@@ -32,7 +32,7 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 
 
 <p align="center"><br>  
-Once of the core reasons this plugin was created was to make it easier for users to support plugin developers and relieve part of the burden of providing support. Creating, maintaining, and addressing questions for free software is time consuming, and practically impossible for many. This is why I included a "Donate" button in the info card for every developer who adds their funding links in the plugin's manifest or readme files. Donating to developers helps the Obsidian ecosystem thrive. Every little bit helps.<br><br>  
+Once of the core reasons this plugin was created was to make it easier for users to support plugin developers, and to try and lighten the load of providing support to users. Creating, maintaining, and addressing questions for free software is time consuming, and practically impossible for many. This is why I included a "Donate" button in the info card for every developer who adds their funding links in the plugin's manifest or readme files. Donating to developers helps the Obsidian ecosystem thrive. Every little bit helps.<br><br>  
 <a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>  
 </p>  
 
