@@ -18,9 +18,6 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 <a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/releases/latest">  
 <img src="https://img.shields.io/github/downloads/Th0rGarden/abracadabra-for-obsidian/total?style=for-the-badge&color=blueviolet" alt="Total Downloads">  
 </a>  
-<a href="https://github.com/Th0rGarden/abracadabra-for-obsidian/blob/main/LICENSE.md">  
-<img src="https://img.shields.io/github/license/Th0rGarden/abracadabra-for-obsidian?style=for-the-badge" alt="License">  
-</a>  
 </p>  
 <p align="center"><br>  
 Creating and maintaining free plugins is time consuming. If you can afford it, please support development. Every little bit helps.<br><br>  
