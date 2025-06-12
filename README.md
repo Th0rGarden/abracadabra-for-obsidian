@@ -100,7 +100,7 @@ After I've figured out the key actions I'll be using regularly, I build myself a
 
 ## Brief Settings Guide
 
-Find these under **Settings -> Abracadabra**. This is a quick summary; for a complete breakdown of every single option, please consult the exhaustive [**Settings Reference**](https://th0rgarden.github.io/abracadabra-for-obsidian/#settings-reference) in the official docs.
+This is a quick summary; for a complete breakdown of every single option, please consult the exhaustive [**Settings Reference**](https://th0rgarden.github.io/abracadabra-for-obsidian/#settings-reference) in the official docs.
 
 - **🎨 Component Layout & Order:** Drag-and-drop to set the global default layout for all components.
     
@@ -121,12 +121,13 @@ Find these under **Settings -> Abracadabra**. This is a quick summary; for a com
 - **✨ Extras & Dev Tools:** Toggle universal upgrades like the full-length theme picker and "Open settings for..." command.
     
 - **🗄️ Data Management:** Manually clear caches for Readmes, version info, and more.
-    
 
-<details>  
-<summary><strong>Want to customize the layout?</strong></summary>  
-<p>Abracadabra features a powerful two-tiered layout system. You can set a global default layout and then override it for individual plugins. <a href="https://th0rgarden.github.io/Abracadabra-Docs/#customization">Learn all about it in the Customization Guide</a>.</p>  
-</details>  
+### Global and plugin-specific layouts
+🌍 <strong>Global Layout:</strong> Define the master layout in Abracadabra's main settings. This default order and visibility applies to all plugins.
+
+🔬 <strong>Per-Plugin Layout:</strong> Use the `Abracadabra ˅` menu to override the global layout. Hide a component just for that plugin, or drag and drop to reorder them.
+
+<a href="https://th0rgarden.github.io/Abracadabra-Docs/#customization">Learn more about it in the Customization Guide</a>.
 
 ## Frequently Asked Questions (FAQ)
 
@@ -179,6 +180,7 @@ I'm proud to have invested 150+ hours so for into crafting Abracadabra for the O
 <p align="center">  
 <a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>  
 </p>  
+
 ### Bug Reports & Feature Requests  
 
 Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://github.com/Th0rGarden/abracadabra-for-obsidian/issues). Before submitting, you may want to check the [bug reporting guide](https://th0rgarden.github.io/abracadabra-for-obsidian/#faq) in our docs for tips on creating the most effective reports. Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
@@ -187,4 +189,4 @@ Please report any bugs or suggest new features by creating an issue on the [GitH
 
 ## License
 
-Abracadabra is released under the terms of the End-User License Agreement (EULA). All rights are reserved. By installing and using this plugin, you agree to the terms specified in the [LICENSE](https://github.com/Th0rGarden/Abracadabra/blob/main/LICENSE.md) file.
+Abracadabra is released under the terms of the End-User License Agreement (EULA). All rights are reserved. By installing and using this plugin, you agree to the terms specified in the [LICENSE](https://github.com/Th0rGarden/abracadabra-for-obsidian/blob/main/LICENSE.md) file.
