@@ -60,13 +60,15 @@ The potential of many plugins is locked away behind fragmented interfaces. Docum
 ### 🪄 The Solution
 Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic command deck for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://th0rgarden.github.io/abracadabra-for-obsidian/#core-concepts) in our documentation.
 
+<br/>
+
 ## Three Views
 
 - <strong>Inline View:</strong> Integrates directly into any plugin's settings page.
 - <strong>Pop-out Window:</strong> A floating, draggable, and resizable window for parallel work.
-- <strong>Dedicated View:</strong> A full-pane view you can place anywhere in your workspace.
+- <strong>Dedicated View:</strong> A full-pane/tab view you can place anywhere in your workspace.
 
-<br>
+<br/>
 
 ## Key Features: Your Modular Command Deck
 
