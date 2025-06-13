@@ -44,7 +44,7 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 
 <h2>Supporting Developers!</h2>
 <p>
-One of the most important reasons this plugin exists is to make it easier for users to support plugin developers, and to lighten the load of providing support back to users.<br/><br/> Creating, maintaining, as well as addressing user questions all for free software is time consuming, and practically impossible for many. <br/><br/>This is why Abracadabra features a "Donate" button in the info card for every developer who adds their funding links in the plugin's manifest or readme files.<br/><br/> Donating to developers helps the Obsidian ecosystem thrive.<br/><br/> Every little bit helps!<br><br>  
+One of this plugin's primary purposes is to lighten the burden of developing free software by making it easier for users to give support, and for developers to receive it. The work of creating, maintaining, and answering user questions is time-consuming and practically unsustainable for many. For this reason, Abracadabra includes a convenient "Donate" button to help support development. Your donations ensure the entire Obsidian ecosystem can thrive. Every little bit helps!<br><br>  
 <a href="https://www.buymeacoffee.com/Th0rGarden" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: auto; width: 150px !important;" ></a>  
 </p>  
 
