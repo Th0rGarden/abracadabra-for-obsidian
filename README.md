@@ -1,23 +1,28 @@
 <h1 align="center"><span style="text-decoration:underline;">Abracadabra</span> for Obsidian</h1>
 
+
 <p align="center"  >
  <strong>🪄 Master and command your Obsidian plugins. </strong>
 </p>
-
-<p  align="center"  ></br/>
- ★ ★ ★ ★ ★
+ 
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/f201abe0-4b5d-42be-94e6-288e29d6a073"><br/>
+ <span style="font-size: 1.5em; letter-spacing: 0.2em; color: #888;">◆ ◆ ◆</span>
      <br/><br/>
-🗣️<i>"The first thing I do when I install a new plugin now is pop open its Abracadabra window."</i><br/><br/>
-     ★ ★ ★ ★ ★<br/>
+🗣️ <i>"The first thing I do when I install a new plugin now<br/> is pop open its Abracadabra window."</i><br/><br/>
+     <span style="font-size: 1.5em; letter-spacing: 0.2em; color: #888;">◆ ◆ ◆</span><br/>
 </p>
+
 <br/>
+
 <p align="center"  >
-Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, every command, every note, every hidden feature is summoned at your fingertips into one unified, dynamic control deck.  
+Why should managing plugins feel like deciphering ancient scrolls? With Abracadabra, every command, every note, every hidden feature is summoned at your fingertips into one unified, dynamic Control Center.
 </p>
 
 <p align="center"  >
 No more context switching. No more feature blindness. <strong>Just pure, focused power—finally in your hands.</strong>  
 </p>  
+
 <br/>
 
 <p align="center">  
@@ -30,9 +35,6 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 
 <br/>
 
-> **📖 Looking for the full guide?**  
-> This README is a brief overview. For a complete, searchable guide with real-world use cases and deep-dives into every feature, **[visit the official documentation site](https://th0rgarden.github.io/abracadabra-for-obsidian/)**.
-
 <hr>
 
 #### Find Abracadabra in your plugin settings, pop it out in a resizable modal, and start building a custom command module:
@@ -41,6 +43,20 @@ No more context switching. No more feature blindness. <strong>Just pure, focused
 
 ![image](https://github.com/user-attachments/assets/54b0af83-966b-4216-8e68-810c601f13a5)
 
+
+> **📖 Looking for the full guide?**  
+> This README is a brief overview. For a complete, searchable guide with real-world use cases and deep-dives into every feature, **[visit the official documentation site](https://th0rgarden.github.io/abracadabra-for-obsidian/)**.
+
+<br/>
+
+## What's New?
+This latest update brings major enhancements to interactivity and customization.
+- **Interactive Notes:** The Plugin Notes component now features a **Markdown Preview Mode** with clickable internal links and font size controls.
+- **Dynamic Command Module:** The Command Module grid is now fully responsive, with **tile text and icons that scale dynamically** as you resize the window.
+- **Smarter UI:** New "Collapse When Empty" options for all components reduce clutter, and the settings page has been reorganized for clarity.
+- **And much more!** Including flexible color inputs, smarter grid resizing, and numerous bug fixes.
+
+<br/>
 
 <h2>Supporting Developers!</h2>
 <p>
@@ -52,37 +68,37 @@ One of this plugin's primary purposes is to lighten the burden of developing fre
 
 ## What is Abracadabra?
 
-Abracadabra is a **management console** that fundamentally redefines your relationship with the Obsidian plugin ecosystem.
+Abracadabra is a **management console** that fundamentally redefines your relationship with the Obsidian plugin ecosystem, elevating your ability to manage, comprehend, and command your tools. It also provides universal quality-of-life upgrades, like adding a [search bar to other plugins' settings pages](https://th0rgarden.github.io/abracadabra-for-obsidian/#bonus-features).
 
 ### 😵‍💫 The Problem
 The potential of many plugins is locked away behind fragmented interfaces. Documentation lives on GitHub, commands in the palette, hotkeys buried in settings. This forces constant context switching and leads to "feature blindness"—where you only use a fraction of a plugin's true power.
 
 ### 🪄 The Solution
-Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic command deck for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://th0rgarden.github.io/abracadabra-for-obsidian/#core-concepts) in our documentation.
+Abracadabra consolidates this disparate information into a single, coherent interface. It **summons a dynamic Control Center for each plugin**—a powerful, unified workspace that can be used inline, as a floating window, or in a dedicated pane. To fully grasp the power of this approach, explore the [**Core Concepts & Views**](https://th0rgarden.github.io/abracadabra-for-obsidian/#core-concepts) in our documentation.
 
 <br/>
 
 ## Three Views
 
-- <strong>Inline View:</strong> Integrates directly into any plugin's settings page.
-- <strong>Pop-out Window:</strong> A floating, draggable, and resizable window for parallel work.
-- <strong>Dedicated View:</strong> A full-pane/tab view you can place anywhere in your workspace.
+- <strong><a href="https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-new-settings-page">Inline View</a>:</strong> Integrates directly into any plugin's settings page.
+- <strong><a href="https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-standalone-views">Pop-out Window</a>:</strong> A floating, draggable, and resizable window for parallel work.
+- <strong><a href="https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-standalone-views">Dedicated View</a>:</strong> A full-pane/tab view you can place anywhere in your workspace.
 
 <br/>
 
-## Key Features: Your Modular Command Deck
+## Key Features: Your Modular Control Center
 
-Each component of the Command Deck is a powerful tool on its own. For a complete breakdown of every feature and setting, check out the full documentation.
+Each component of the Control Center is a powerful tool on its own. For a complete breakdown of every feature and setting, check out the full documentation.
 
 - **🃏 Info Card**: Your mission control. Features an advanced version manager, one-click changelogs, and an intelligent action bar with auto-detected Donate, Docs, and Wiki links, plus a configurable Dev menu. ([See Docs for Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-info-card))
     
 - **📖 Readme Viewer**: In-app documentation with intelligent fetching, enhanced rendering for media, full-text search, and font controls. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-readme-viewer))
     
-- **🎛️ Command Module**: Build a visual grid of buttons for any command in Obsidian. Customize names, icons (1000+), and colors. Includes one-click "Pre-populate" and "Clear" actions. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-command-module))
+- **🎛️ Command Module**: Build a visual grid of buttons for any command in Obsidian. Customize names, icons (1000+), and colors. The grid is now fully responsive, with text and icons that scale dynamically. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-command-module))
     
 - **⌨️ Commands & Hotkeys List**: A complete registry of a plugin's commands. Run them directly, jump to hotkey settings, and discover integrations by showing commands from other plugins. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-commands-list))
     
-- **📝 Plugin Notes**: A personal scratchpad for each plugin, saved as standard Markdown files in your vault. Features auto-saving and resizable height that can be remembered per-plugin. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-plugin-notes))
+- **📝 Plugin Notes**: A personal scratchpad for each plugin, saved as standard Markdown files in your vault. Now features a **Markdown Preview Mode** with clickable internal links and font controls. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-plugin-notes))
     
 - **🖥️ Console Logger**: A live, in-app debugging tool. Captures and filters console messages by source plugin, with one-click copy for easy bug reporting. ([Details →](https://th0rgarden.github.io/abracadabra-for-obsidian/#ref-console-logger))
     
@@ -126,23 +142,28 @@ Here's a real-world example of how Abracadabra can change the game.
 2. Open the command palette (Ctrl/Cmd + P) and run the command BRAT: Add a beta plugin for testing.
     
 3. Paste `https://github.com/Th0rGarden/abracadabra-for-obsidian` into the prompt, select "Latest version," and click "Add Plugin".
-    
-💡 **Having trouble?** For more detailed instructions or troubleshooting tips, please refer to the [**full Installation guide**](https://th0rgarden.github.io/abracadabra-for-obsidian/#installation) in our documentation.
 
 ---
 
 <br/>
+
 ## Brief Settings Guide
 
 This is a quick summary; for a complete breakdown of every single option, please consult the exhaustive [**Settings Reference**](https://th0rgarden.github.io/abracadabra-for-obsidian/#settings-reference) in the official docs.
 
-- **🎨 Component Layout & Order:** Drag-and-drop to set the global default layout for all components.
+### Global and plugin-specific layouts
+
+🔬 <strong>Per-Plugin Layout:</strong> Use the `Abracadabra ˅` menu to override the global layout. Hide a component just for that plugin, or drag and drop to reorder them.
+
+🌍 <strong>Global Layout:</strong> Define the master layout in Abracadabra's main settings. This default order and visibility applies to all plugins.
+
+- **🎨 Component Layout & Order:** Set the global default layout for all components.
     
 - **🔧 General Settings:** Toggle settings search, auto-save for section states, and clear per-plugin overrides.
     
 - **🪟 Window Settings:** Set default position and dimensions for the pop-out window.
     
-- **ℹ️ Info Card Settings:** Configure the version checker, add a GitHub PAT, and toggle action buttons.
+- **ℹ️ Info Card Settings:** Configure the version checker, add a github token, and toggle action buttons.
     
 - **📖 Readme Viewer Settings:** Set default state (expanded/collapsed), max height, borderless style, and cache durations.
     
@@ -150,18 +171,13 @@ This is a quick summary; for a complete breakdown of every single option, please
     
 - **📝 Plugin Notes Settings:** Set default state, notes storage path, and auto-save behavior.
     
-- **🎛️ Command Module Settings:** Set global default colors for tiles and text.
+- **🎛️ Command Module Settings:** Set global default colors, rows, and columns for tiles.
     
 - **✨ Extras & Dev Tools:** Toggle universal upgrades like the full-length theme picker and "Open settings for..." command.
     
 - **🗄️ Data Management:** Manually clear caches for Readmes, version info, and more.
 
-### Global and plugin-specific layouts
-🌍 <strong>Global Layout:</strong> Define the master layout in Abracadabra's main settings. This default order and visibility applies to all plugins.
-
-🔬 <strong>Per-Plugin Layout:</strong> Use the `Abracadabra ˅` menu to override the global layout. Hide a component just for that plugin, or drag and drop to reorder them.
-
-<a href="https://th0rgarden.github.io/Abracadabra-Docs/#customization">Learn more about it in the Customization Guide</a>.
+<a href="https://th0rgarden.github.io/abracadabra-for-obsidian/#customization">Learn more in the Customization Guide</a>.
 
 ## Frequently Asked Questions (FAQ)
 
@@ -191,6 +207,7 @@ This covers the most common questions. For an even more comprehensive list, incl
 ---
 
 <br/>
+
 ## For Developers & Themers
 
 Abracadabra is designed to foster a symbiotic relationship between developers and users. By making your plugin easier to understand and use, it increases adoption, user satisfaction, and support. For a deep dive into the plugin's architecture and CSS customization, check out the [**For Developers**](https://th0rgarden.github.io/abracadabra-for-obsidian/#for-developers) section of the docs.
@@ -201,6 +218,7 @@ Abracadabra is designed to foster a symbiotic relationship between developers an
 ---
 
 <br/>
+
 ## My Mission
 
 My ultimate mission is to save creatives and professionals precious time and cognitive power, to help you live up to your potential, and get incredible things done. Abracadabra for Obsidian is just one of the ways I'm working towards this: by helping to create a more vibrant and sustainable plugin ecosystem for the Obsidian community.
@@ -210,6 +228,7 @@ Abracadabra achieves this by giving users handy tools that facilitate learning, 
 Abracadabra is just one of my projects aimed at empowering the world to make amazing things happen. Stay tuned.
 
 <br/>
+
 ## ❤️ Support
 
 I'm proud to have invested 150+ hours so for into crafting Abracadabra for the Obsidian community. If you find it helpful, please consider supporting its development by quite simply buying me a coffee!
@@ -219,6 +238,7 @@ I'm proud to have invested 150+ hours so for into crafting Abracadabra for the O
 </p>  
 
 <br/>
+
 ### Bug Reports & Feature Requests  
 
 Please report any bugs or suggest new features by creating an issue on the [GitHub repository](https://github.com/Th0rGarden/abracadabra-for-obsidian/issues). Better yet, try submitting an issue though Abracadabra’s built-in issue submitter! (find the button in the info card)
